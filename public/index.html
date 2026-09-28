@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venkata Phani Kumari Boda | Portfolio</title>
+  <meta name="description" content="Personal portfolio of Venkata Phani Kumari Boda — Electronics & Communication Engineering student at SRM University-AP (CGPA 9.13). Embedded systems, FPGA, automotive, and hardware projects.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand">
+        <div class="brand-info">
+          <div class="brand-name">Phani Kumari <span>Boda</span></div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline nav-desktop-action" id="openResumeBtn">
+          <span>📄</span> Resume
+        </button>
+        <button class="theme-toggle" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle Theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-actions">
+        <button class="btn btn-outline" id="mobileOpenResumeBtn" style="width: 100%; justify-content: center;">
+          <span>📄</span> View Resume
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. PERSONAL HERO SECTION AT THE VERY TOP -->
+  <section class="personal-hero-wrapper" id="home">
+    <div class="container">
+      <div class="personal-hero-card">
+        
+        <!-- LEFT: Candidate Personal Information -->
+        <div class="personal-hero-info">
+          <div class="section-tag" style="margin-bottom: 12px;">
+            <span>●</span> B.Tech ECE · SRM University-AP · CGPA 9.13 / 10
+          </div>
+          <h1 class="personal-hero-name">Venkata Phani Kumari Boda</h1>
+          <div class="personal-hero-degree">
+            <span>⚡</span> Electronics & Communication Engineering
+          </div>
+          <p class="personal-hero-bio">
+            I build practical electronics and embedded prototypes using ESP32 and Arduino, with a focus on circuit design, testing, and hands-on hardware. Currently an ECE student at SRM University-AP, I enjoy turning ideas into working prototypes.
+          </p>
+
+          <div class="personal-hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <span>🚀</span> View Projects
+            </a>
+            <button class="btn btn-outline" id="heroResumeBtn">
+              <span>📄</span> Resume
+            </button>
+            <a href="#contact" class="btn btn-outline">
+              <span>✉️</span> Contact
+            </a>
+          </div>
+
+          <div class="personal-hero-meta">
+            <span>📍 Andhra Pradesh, India</span>
+            <a href="tel:+91939083562" class="copyable" data-copy="+91939083562" title="Click to call / copy">
+              <span>📞</span> +91 939083562
+            </a>
+            <span class="copyable" data-copy="phanikumari_boda@srmap.edu.in" style="cursor: pointer;" title="Click to copy email">
+              ✉️ phanikumari_boda@srmap.edu.in
+            </span>
+            <a href="https://github.com/phanikumari1718-debug" target="_blank" rel="noopener">
+              <span>💻</span> GitHub
+            </a>
+            <a href="https://linkedin.com/in/phani-kumari" target="_blank" rel="noopener">
+              <span>🔗</span> LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Small Profile Photo Area (Clean, fixed presentation) -->
+        <div class="personal-photo-container">
+          <div class="personal-photo-frame">
+            <img id="profilePhotoImg" src="assets/image.jpeg" alt="Venkata Phani Kumari Boda" class="personal-photo-img" onerror="this.onerror=null; this.src='public/assets/image.jpeg';">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. COMPACT ABOUT ME / PERSONAL DETAILS SECTION -->
+  <section id="about" style="padding: 40px 0;">
+    <div class="container">
+      <div class="section-tag">Overview</div>
+      <h2 class="section-title">About Me</h2>
+      <p class="section-desc" style="margin-bottom: 24px;">
+        Electronics and Communication Engineering undergraduate with hands-on experience in bare-metal microcontroller firmware, FPGA SoC design, and automotive control loops.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card-title">
+            <span>🎓</span> Education & Academics
+          </div>
+          <div class="about-card-desc">
+            <b>SRM University-AP</b><br>
+            B.Tech in Electronics & Communication Engineering (2023–2027)<br>
+            Academic Standing: <b>CGPA 9.13 / 10</b><br>
+            <span style="color: var(--text-main); font-weight: 500;">📞 Phone: +91 939083562</span>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-title">
+            <span>⚡</span> Focus Areas
+          </div>
+          <div class="about-card-desc">
+            <b>VLSI & Digital Engineering</b>, Embedded Systems, Firmware Architecture, Automotive Electronics, FPGA & RISC-V SoCs, and Closed-Loop Control Systems.
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-title">
+            <span>💼</span> Practical Experience
+          </div>
+          <div class="about-card-desc">
+            Completed industry internships at <b>EMERTXE IT Solutions</b> (bare-metal ARM C & FSMs) and <b>Tierra Automation</b> (industrial safety gate modules).
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-title">
+            <span>🛠️</span> Engineering Approach
+          </div>
+          <div class="about-card-desc">
+            Writing deterministic, non-blocking C code, verified through systematic hardware-in-the-loop (HIL) testing and register-level simulation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMPACT PROJECTS SECTION -->
+  <section id="projects" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-tag">Featured Work</div>
+      <h2 class="section-title">Engineering Projects</h2>
+      <p class="section-desc">
+        Concise breakdown of 5 core projects across Embedded C, RISC-V FPGA, and Automotive Control. Click any project to open its interactive live simulator or technical specifications.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All Projects (5)</button>
+        <button class="filter-btn" data-filter="embedded">Embedded Systems</button>
+        <button class="filter-btn" data-filter="hardware">FPGA & Hardware</button>
+        <button class="filter-btn" data-filter="control">Automotive & Control</button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid">
+        
+        <!-- Project 1: Ibex RISC-V SoC Demo System -->
+        <div class="project-compact-card" data-category="hardware">
+          <div>
+            <div class="project-card-badge-row">
+              <span class="badge amber">FPGA & RISC-V</span>
+              <span style="font-size: 1.25rem;">💎</span>
+            </div>
+            <h3 class="project-compact-title">Ibex RISC-V SoC Demo System</h3>
+            <p class="project-compact-desc">
+              Synthesized and deployed a 32-bit RISC-V SoC based on the open-source Ibex core (RV32IMC) on a Xilinx Artix-7 FPGA operating at 50MHz with custom memory-mapped peripherals.
+            </p>
+            <div class="project-what-i-did">
+              <b>What I did:</b> Integrated custom UART, GPIO, and Timer peripherals in Verilog, compiled bare-metal C firmware using riscv32-gcc, and verified execution timing in Vivado.
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Ibex RV32IMC</span>
+              <span class="tech-tag">SystemVerilog</span>
+              <span class="tech-tag">Xilinx Vivado</span>
+              <span class="tech-tag">Artix-7 FPGA</span>
+              <span class="tech-tag">Bare-Metal C</span>
+            </div>
+          </div>
+          <div class="project-compact-actions">
+            <button class="btn btn-primary open-project-modal" data-target="projectModal5" data-tab="sim" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>🚀</span> Test Live Simulator
+            </button>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal5" data-tab="code" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>📋</span> Details & Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: Smart EV Battery Management System -->
+        <div class="project-compact-card" data-category="control">
+          <div>
+            <div class="project-card-badge-row">
+              <span class="badge amber">Simulink Closed-Loop</span>
+              <span style="font-size: 1.25rem;">⚡</span>
+            </div>
+            <h3 class="project-compact-title">Smart EV Battery Management System (BMS)</h3>
+            <p class="project-compact-desc">
+              Closed-loop Lithium-ion battery pack management algorithm estimating State of Charge (SOC) via Extended Kalman Filtering (EKF) and Coulomb Counting.
+            </p>
+            <div class="project-what-i-did">
+              <b>What I did:</b> Modeled cell electrochemistry in Simulink/Stateflow and implemented multi-tier thermal threshold protection logic with CAN bus fault frames.
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">MATLAB</span>
+              <span class="tech-tag">Simulink</span>
+              <span class="tech-tag">Stateflow</span>
+              <span class="tech-tag">EKF Algorithm</span>
+              <span class="tech-tag">CAN Bus</span>
+            </div>
+          </div>
+          <div class="project-compact-actions">
+            <button class="btn btn-primary open-project-modal" data-target="projectModal2" data-tab="sim" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>🚀</span> Test Live Simulator
+            </button>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal2" data-tab="code" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>📋</span> Details & Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3: Automotive Temp & Cooling System -->
+        <div class="project-compact-card" data-category="embedded control">
+          <div>
+            <div class="project-card-badge-row">
+              <span class="badge green">ARM Cortex-M</span>
+              <span style="font-size: 1.25rem;">🌡️</span>
+            </div>
+            <h3 class="project-compact-title">Automotive Engine Temp & Fan Controller</h3>
+            <p class="project-compact-desc">
+              Closed-loop automotive thermal management system utilizing 12-bit ADC temperature sampling, dynamic PWM fan speed regulation, and dual-band hysteresis logic.
+            </p>
+            <div class="project-what-i-did">
+              <b>What I did:</b> Implemented noise-filtered ADC sampling and dual-hysteresis bands to eliminate mechanical fan chattering at threshold boundaries.
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">ARM Cortex-M</span>
+              <span class="tech-tag">12-bit ADC</span>
+              <span class="tech-tag">PWM Fan Control</span>
+              <span class="tech-tag">Hysteresis</span>
+            </div>
+          </div>
+          <div class="project-compact-actions">
+            <button class="btn btn-primary open-project-modal" data-target="projectModal3" data-tab="sim" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>🚀</span> Test Live Simulator
+            </button>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal3" data-tab="code" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>📋</span> Details & Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4: Washing Machine Controller -->
+        <div class="project-compact-card" data-category="embedded">
+          <div>
+            <div class="project-card-badge-row">
+              <span class="badge blue">EMERTXE Internship</span>
+              <span style="font-size: 1.25rem;">🧼</span>
+            </div>
+            <h3 class="project-compact-title">Washing Machine Controller FSM</h3>
+            <p class="project-compact-desc">
+              Bare-metal C controller executing a deterministic 6-state FSM on ARM Cortex-M with non-blocking 10ms hardware timer ISR, PWM motor control, and debounced keypad.
+            </p>
+            <div class="project-what-i-did">
+              <b>What I did:</b> Architected non-blocking state machine dispatcher in C, wrote peripheral drivers for 4x20 LCD and keypad, and performed HIL fault-injection testing.
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Bare-Metal C</span>
+              <span class="tech-tag">ARM Cortex-M</span>
+              <span class="tech-tag">6-State FSM</span>
+              <span class="tech-tag">10ms Timer ISR</span>
+              <span class="tech-tag">PWM Motor</span>
+            </div>
+          </div>
+          <div class="project-compact-actions">
+            <button class="btn btn-primary open-project-modal" data-target="projectModal1" data-tab="sim" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>🚀</span> Test Live Simulator
+            </button>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal1" data-tab="code" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>📋</span> Details & Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5: Smart Railway Level Crossing Gate -->
+        <div class="project-compact-card" data-category="embedded hardware">
+          <div>
+            <div class="project-card-badge-row">
+              <span class="badge blue">Tierra Automation</span>
+              <span style="font-size: 1.25rem;">🚂</span>
+            </div>
+            <h3 class="project-compact-title">Smart Railway Level Crossing Gate Automation</h3>
+            <p class="project-compact-desc">
+              Industrial railway safety controller using dual IR proximity sensors, servo PWM gate barrier actuation, warning sirens, and fail-safe timeout logic.
+            </p>
+            <div class="project-what-i-did">
+              <b>What I did:</b> Built sensor conditioning circuits, wired harness arrays, and implemented fail-safe timeout routines to prevent barrier lockup.
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Microcontroller</span>
+              <span class="tech-tag">IR Proximity Sensors</span>
+              <span class="tech-tag">Servo PWM</span>
+              <span class="tech-tag">Fail-Safe Logic</span>
+            </div>
+          </div>
+          <div class="project-compact-actions">
+            <button class="btn btn-primary open-project-modal" data-target="projectModal4" data-tab="sim" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>🚀</span> Test Live Simulator
+            </button>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal4" data-tab="code" style="font-size: 0.82rem; padding: 7px 14px;">
+              <span>📋</span> Details & Code
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TECHNICAL EXPERTISE (EFFECTIVE 2-BOX SPLIT VIEW) -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-tag">Technical Competencies</div>
+      <h2 class="section-title">Technical Expertise</h2>
+      <p class="section-desc">
+        Effective split view of core competencies spanning embedded firmware, digital VLSI engineering, control modeling, and verification.
+      </p>
+
+      <div class="skills-grid">
+        
+        <!-- Box 1: Embedded Systems & Firmware -->
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <span class="cat-icon">⚙️</span> Embedded Systems & Firmware
+          </div>
+          <div class="skill-tags-cloud">
+            <span class="skill-pill">ARM Cortex-M (STM32)</span>
+            <span class="skill-pill">Bare-Metal C</span>
+            <span class="skill-pill">Embedded C</span>
+            <span class="skill-pill">PIC Microcontrollers</span>
+            <span class="skill-pill">ESP32 & Arduino</span>
+            <span class="skill-pill">8051 Microcontroller</span>
+            <span class="skill-pill">Non-Blocking Timers</span>
+            <span class="skill-pill">PWM Motor Drivers</span>
+            <span class="skill-pill">12-bit ADC</span>
+            <span class="skill-pill">Hardware ISRs</span>
+          </div>
+        </div>
+
+        <!-- Box 2: VLSI, FPGA & Digital Engineering -->
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <span class="cat-icon">💎</span> VLSI, FPGA & Digital Engineering
+          </div>
+          <div class="skill-tags-cloud">
+            <span class="skill-pill">Verilog HDL</span>
+            <span class="skill-pill">SystemVerilog</span>
+            <span class="skill-pill">Xilinx Vivado</span>
+            <span class="skill-pill">Artix-7 FPGA</span>
+            <span class="skill-pill">Ibex RISC-V SoC</span>
+            <span class="skill-pill">Digital Logic Design</span>
+            <span class="skill-pill">Timing Analysis</span>
+            <span class="skill-pill">FSM Architecture</span>
+            <span class="skill-pill">RTL Simulation</span>
+          </div>
+        </div>
+
+        <!-- Box 3: Control Systems & EDA Software -->
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <span class="cat-icon">📐</span> Control Systems & Simulation
+          </div>
+          <div class="skill-tags-cloud">
+            <span class="skill-pill">MATLAB & Simulink</span>
+            <span class="skill-pill">Stateflow</span>
+            <span class="skill-pill">EKF Algorithms</span>
+            <span class="skill-pill">LTspice</span>
+            <span class="skill-pill">Proteus Design</span>
+            <span class="skill-pill">MPLAB X IDE</span>
+            <span class="skill-pill">Git & GitHub</span>
+          </div>
+        </div>
+
+        <!-- Box 4: Protocols, Hardware & Test Verification -->
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <span class="cat-icon">🔌</span> Protocols & Lab Testing
+          </div>
+          <div class="skill-tags-cloud">
+            <span class="skill-pill">UART</span>
+            <span class="skill-pill">SPI</span>
+            <span class="skill-pill">I2C</span>
+            <span class="skill-pill">CAN Bus</span>
+            <span class="skill-pill">Digital Oscilloscope</span>
+            <span class="skill-pill">Logic Analyzer</span>
+            <span class="skill-pill">HIL Verification</span>
+            <span class="skill-pill">Sensor Conditioning</span>
+            <span class="skill-pill">PCB Assembly</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. EXPERIENCE & EDUCATION (COMPACT, SIMPLE TIMELINE) -->
+  <section id="experience" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-tag">Career & Education</div>
+      <h2 class="section-title">Timeline</h2>
+      <p class="section-desc">
+        Academic degree program and engineering internship experiences.
+      </p>
+
+      <div class="timeline">
+        
+        <!-- SRM University -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div class="timeline-title">SRM University-AP</div>
+              <span class="timeline-date-badge">2023 – 2027</span>
+            </div>
+            <div class="timeline-subtitle">B.Tech in Electronics & Communication Engineering · CGPA: 9.13 / 10</div>
+            <div class="timeline-desc">
+              Focus on Microprocessors, VLSI & Digital Design, Control Systems, and Digital Signal Processing.
+            </div>
+          </div>
+        </div>
+
+        <!-- EMERTXE Internship -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div class="timeline-title">EMERTXE IT Solutions</div>
+              <span class="timeline-date-badge">2024</span>
+            </div>
+            <div class="timeline-subtitle">Embedded Systems Engineering Intern</div>
+            <div class="timeline-desc">
+              Developed bare-metal C firmware for a 6-State FSM washing machine controller on ARM Cortex-M with 10ms timer scheduler and HIL verification.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tierra Automation Internship -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div class="timeline-title">Tierra Automation</div>
+              <span class="timeline-date-badge">2024</span>
+            </div>
+            <div class="timeline-subtitle">Electronics & Automation Engineering Intern</div>
+            <div class="timeline-desc">
+              Engineered sensor interface modules for industrial railway crossing automation using IR sensors, servo PWM gate actuation, and safety timeout logic.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONTACT SECTION -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-tag">Let's Connect</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-desc">
+        Interested in electronics, embedded prototyping, or building practical hardware projects together? Feel free to reach out.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-card">
+          <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 20px;">Send a Direct Message</h3>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-input" placeholder="e.g. Alex Recruiter" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="name@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" class="form-textarea" placeholder="Hello Phani Kumari, I would like to discuss an opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="justify-content: center;">
+              <span>✉️</span> Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Quick Copy Cards -->
+        <div class="contact-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 20px;">Contact Information</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div class="badge copyable" data-copy="phanikumari_boda@srmap.edu.in" style="padding: 12px 14px; font-size: 0.95rem; cursor: pointer;" title="Click to copy email">
+                <span>📧</span> phanikumari_boda@srmap.edu.in
+              </div>
+
+              <div class="badge copyable" data-copy="+91939083562" style="padding: 12px 14px; font-size: 0.95rem; cursor: pointer;" title="Click to copy phone">
+                <span>📱</span> +91 939083562
+              </div>
+
+              <a href="https://linkedin.com/in/phani-kumari" target="_blank" rel="noopener" class="badge blue" style="padding: 12px 14px; font-size: 0.95rem;">
+                <span>🔗</span> LinkedIn Profile
+              </a>
+
+              <a href="https://github.com/phanikumari1718-debug" target="_blank" rel="noopener" class="badge green" style="padding: 12px 14px; font-size: 0.95rem;">
+                <span>💻</span> GitHub: phanikumari1718-debug
+              </a>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; background: var(--bg-tertiary); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-weight: 700; margin-bottom: 4px; font-size: 0.95rem;">📍 Location</div>
+            <div style="font-size: 0.88rem; color: var(--text-muted);">Andhra Pradesh, India · Open to Relocation & Remote Work</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem; color: var(--text-main);">
+          Venkata Phani Kumari Boda
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">B.Tech ECE · SRM University-AP (CGPA 9.13 / 10)</div>
+      </div>
+      <div style="font-size: 0.85rem; color: var(--text-muted);">
+        by Venkata Phani Kumari Boda
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS: RESUME + ALL 5 DEDICATED PROJECT SIMULATORS & TECHNICAL DEEP-DIVES
+       ========================================================================== -->
+
+  <!-- RESUME MODAL -->
+  <div class="modal-backdrop" id="resumeModal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 24px;">
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">Resume — Phani Kumari Boda</h2>
+        <button class="btn btn-primary" onclick="window.print()"><span>🖨️</span> Print / Save PDF</button>
+      </div>
+
+      <div style="font-size: 0.92rem; line-height: 1.7; color: var(--text-main);">
+        <h3 style="color: var(--accent-emerald); margin-bottom: 4px;">Venkata Phani Kumari Boda</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">
+          phanikumari_boda@srmap.edu.in | +91 939083562 | Andhra Pradesh, India<br>
+          LinkedIn: linkedin.com/in/phani-kumari | GitHub: github.com/phanikumari1718-debug
+        </p>
+
+        <h4 style="border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin: 16px 0 8px; color: var(--accent-emerald);">EDUCATION</h4>
+        <p><b>B.Tech in Electronics & Communication Engineering (ECE)</b> — SRM University-AP (2023 – 2027)</p>
+        <p>Current CGPA: <b>9.13 / 10</b></p>
+
+        <h4 style="border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin: 16px 0 8px; color: var(--accent-emerald);">TECHNICAL SKILLS</h4>
+        <p><b>Languages & Firmware:</b> Bare-Metal C, Embedded C, C++, Python, Verilog HDL, SystemVerilog, 8051 Assembly</p>
+        <p><b>VLSI & Architectures:</b> Xilinx Artix-7 FPGA, Ibex RISC-V RV32IMC SoC, ARM Cortex-M, ESP32, Arduino, PIC16/18</p>
+        <p><b>Control & EDA Tools:</b> MATLAB, Simulink, Stateflow, Xilinx Vivado, LTspice, Proteus, MPLAB X IDE</p>
+        <p><b>Peripherals & Testing:</b> Timer ISR, PWM, 12-bit ADC, UART, SPI, I2C, CAN Bus, HIL Testing, Oscilloscope, Soldering</p>
+
+        <h4 style="border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin: 16px 0 8px; color: var(--accent-emerald);">EXPERIENCE & INTERNSHIPS</h4>
+        <p><b>EMERTXE IT Solutions</b> — Embedded Systems Engineering Intern (2024)</p>
+        <ul style="margin-left: 20px; color: var(--text-muted);">
+          <li>Developed bare-metal C firmware for a 6-State FSM Washing Machine Controller on ARM Cortex-M.</li>
+          <li>Implemented 10ms hardware timer ISR, PWM motor regulation, LCD parallel driver, and matrix keypad scanner.</li>
+          <li>Executed HIL fault-injection testing with zero undefined state failures.</li>
+        </ul>
+
+        <p style="margin-top: 10px;"><b>Tierra Automation</b> — Electronics & Automation Engineering Intern (2024)</p>
+        <ul style="margin-left: 20px; color: var(--text-muted);">
+          <li>Engineered microcontroller sensor interface modules for industrial level-crossing gate automation.</li>
+          <li>Integrated dual IR proximity sensors, servo PWM gate actuators, and fail-safe matrix safety logic.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 1 MODAL: Washing Machine Controller -->
+  <div class="modal-backdrop" id="projectModal1">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 14px; margin-bottom: 16px;">
+        <span class="badge blue">Project 1</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; margin-top: 6px;">
+          Washing Machine Controller (ARM Cortex-M Bare-Metal C)
+        </h2>
+      </div>
+
+      <!-- Modal Tabs: Live Simulator vs Code & Specs -->
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="sim">🚀 Live Interactive Simulator</button>
+        <button class="modal-tab-btn" data-tab="code">💻 Firmware Code & Flow</button>
+      </div>
+
+      <!-- TAB PANE 1: Live Interactive Simulator -->
+      <div class="modal-tab-pane active" data-pane="sim">
+        <div class="sim-container" style="margin-top: 10px; margin-bottom: 16px;">
+          <div class="sim-hardware-box">
+            <div class="sim-box-title">
+              <span>📟 Hardware Panel (LCD & 3x4 Matrix Keypad)</span>
+              <span class="badge green" style="font-size: 0.75rem;">10ms Scan</span>
+            </div>
+            <div class="lcd-display-case">
+              <div class="lcd-screen-inner">
+                <div class="lcd-line" id="lcdLine1_p1">READY -- PRESS START<span class="lcd-cursor"></span></div>
+                <div class="lcd-line" id="lcdLine2_p1">MODE: STANDARD [3x4]</div>
+              </div>
+            </div>
+            <div class="keypad-grid">
+              <button class="key-btn btn-start" onclick="window.simulator.handleKeyPress('START')">▶ START</button>
+              <button class="key-btn btn-stop" onclick="window.simulator.handleKeyPress('STOP')">⏹ STOP</button>
+              <button class="key-btn" onclick="window.simulator.handleKeyPress('MODE')">⚙ MODE</button>
+              <button class="key-btn" onclick="window.simulator.handleKeyPress('WASH_DIRECT')">1 WASH</button>
+              <button class="key-btn" onclick="window.simulator.handleKeyPress('RINSE_DIRECT')">2 RINSE</button>
+              <button class="key-btn" onclick="window.simulator.handleKeyPress('SPIN_DIRECT')">3 SPIN</button>
+            </div>
+          </div>
+          <div class="sim-telemetry-box">
+            <div class="sim-box-title">
+              <span>📈 Motor PWM Oscilloscope</span>
+              <span class="badge blue">TIM2 PWM</span>
+            </div>
+            <div class="scope-container">
+              <canvas id="pwmScopeCanvas_p1" class="scope-canvas" width="400" height="110"></canvas>
+            </div>
+            <div class="fsm-states-tracker" style="margin-top: 10px;">
+              <div class="fsm-state-pill active">IDLE</div>
+              <div class="fsm-state-pill">WASH (40%)</div>
+              <div class="fsm-state-pill">RINSE (30%)</div>
+              <div class="fsm-state-pill">SPIN (85%)</div>
+              <div class="fsm-state-pill">DRAIN (0%)</div>
+              <div class="fsm-state-pill">PAUSED</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB PANE 2: Firmware Code & Flow -->
+      <div class="modal-tab-pane" data-pane="code">
+        <div style="font-size: 0.92rem; line-height: 1.65;">
+          <p style="margin-bottom: 12px; color: var(--text-muted);">
+            Deterministic 6-state FSM inside <code>wash_cycle_fsm.c</code>. A non-blocking 10ms hardware timer interrupt decrements remaining cycle time and scans the matrix keypad.
+          </p>
+          <div class="code-viewer" style="margin-bottom: 16px;">
+            <div class="code-header">
+              <span class="code-title">wash_cycle_fsm.c — State Machine Dispatcher</span>
+              <span class="badge blue">C99 Bare-Metal</span>
+            </div>
+            <pre class="code-body"><span class="code-kw">while</span> (<span class="code-num">1</span>) {
+    <span class="code-fn">keypad_scan</span>();
+    <span class="code-fn">scheduler_tick</span>();
+
+    <span class="code-kw">switch</span> (current_state) {
+        <span class="code-kw">case</span> <span class="code-var">STATE_IDLE</span>:
+            <span class="code-fn">lcd_print</span>(<span class="code-str">"READY -- PRESS START"</span>);
+            <span class="code-kw">if</span> (<span class="code-fn">key_pressed</span>(<span class="code-var">KEY_START</span>)) {
+                <span class="code-fn">timer_load</span>(<span class="code-num">480</span>); <span class="code-cmt">/* 8 min wash */</span>
+                <span class="code-fn">pwm_set_duty</span>(<span class="code-num">40</span>);  <span class="code-cmt">/* 40% PWM duty */</span>
+                current_state = <span class="code-var">STATE_WASH</span>;
+            }
+            <span class="code-kw">break</span>;
+
+        <span class="code-kw">case</span> <span class="code-var">STATE_WASH</span>:
+            <span class="code-fn">lcd_print_format</span>(<span class="code-str">"WASH %02d:%02d"</span>, rem_m, rem_s);
+            <span class="code-kw">if</span> (<span class="code-fn">key_pressed</span>(<span class="code-var">KEY_STOP</span>)) { <span class="code-fn">enter_paused</span>(); <span class="code-kw">break</span>; }
+            <span class="code-kw">if</span> (<span class="code-fn">timer_expired</span>())      { <span class="code-fn">transition_to</span>(<span class="code-var">STATE_RINSE</span>); }
+            <span class="code-kw">break</span>;
+    }
+}</pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECT 2 MODAL: EV Battery Management System -->
+  <div class="modal-backdrop" id="projectModal2">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 14px; margin-bottom: 16px;">
+        <span class="badge amber">Project 2</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; margin-top: 6px;">
+          Smart EV Battery Management System (Simulink & EKF)
+        </h2>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="sim">🚀 Live Interactive Simulator</button>
+        <button class="modal-tab-btn" data-tab="code">💻 EKF Formulation & Flow</button>
+      </div>
+
+      <!-- TAB PANE 1: Live Interactive Simulator -->
+      <div class="modal-tab-pane active" data-pane="sim">
+        <div class="sim-container" style="margin-top: 10px; margin-bottom: 16px;">
+          <div class="sim-hardware-box">
+            <div class="sim-box-title">
+              <span>🔋 Dynamic Battery Cell Inputs</span>
+              <span class="badge amber" style="font-size: 0.75rem;">Simulink Loop</span>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <label style="font-size: 0.85rem; font-weight: 600;">Cell Temperature (°C):</label>
+                <span id="bmsTempVal_p2" style="font-weight: 700; color: var(--accent-amber);">35.0 °C</span>
+              </div>
+              <input type="range" id="bmsTempSlider_p2" min="20" max="75" value="35" step="1" style="width: 100%;">
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <label style="font-size: 0.85rem; font-weight: 600;">Pack Discharge Current (A):</label>
+                <span id="bmsCurrentVal_p2" style="font-weight: 700; color: var(--accent-emerald);">25.0 A</span>
+              </div>
+              <input type="range" id="bmsCurrentSlider_p2" min="0" max="110" value="25" step="5" style="width: 100%;">
+            </div>
+          </div>
+
+          <div class="sim-telemetry-box">
+            <div class="sim-box-title">
+              <span>📊 Real-Time State Telemetry</span>
+              <span id="bmsRelayBadge_p2" class="badge green">✅ RELAY CLOSED</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div style="background: var(--bg-tertiary); padding: 12px; border-radius: var(--radius-sm);">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">EKF ESTIMATED SOC</div>
+                <div id="bmsSocVal_p2" style="font-size: 1.4rem; font-weight: 800; color: var(--accent-emerald);">81.8 %</div>
+              </div>
+              <div style="background: var(--bg-tertiary); padding: 12px; border-radius: var(--radius-sm);">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">ESTIMATION ERROR</div>
+                <div id="bmsEkfVal_p2" style="font-size: 1.4rem; font-weight: 800; color: var(--text-main);">± 2.00 %</div>
+              </div>
+            </div>
+            <div style="background: var(--code-bg); color: #34D399; font-family: var(--font-mono); font-size: 0.8rem; padding: 10px; border-radius: var(--radius-sm);" id="bmsCanFrame_p2">
+              0x012 | SOC=81.8% | TEMP=35.0C | V_CELL=3.78V
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB PANE 2: EKF Formulation -->
+      <div class="modal-tab-pane" data-pane="code">
+        <div style="font-size: 0.92rem; line-height: 1.65;">
+          <p style="margin-bottom: 12px; color: var(--text-muted);">
+            Formulated Extended Kalman Filter (EKF) algorithm in MATLAB to correct voltage nonlinearities across operating temperatures.
+          </p>
+          <div class="code-viewer">
+            <div class="code-header">
+              <span class="code-title">ekf_soc_observer.m — Kalman Estimation Matrix</span>
+              <span class="badge amber">MATLAB / Simulink</span>
+            </div>
+            <pre class="code-body"><span class="code-cmt">% Predict state vector [SOC, V_rc]</span>
+<span class="code-var">x_hat</span> = A * x_prev + B * I_pack;
+<span class="code-var">P</span> = A * P_prev * A' + Q;
+
+<span class="code-cmt">% Compute Kalman Gain</span>
+<span class="code-var">K</span> = P * H' * inv(H * P * H' + R);
+<span class="code-var">x_hat</span> = x_hat + K * (V_measured - V_ocv(SOC));</pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECT 3 MODAL: Automotive Temp Controller -->
+  <div class="modal-backdrop" id="projectModal3">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 14px; margin-bottom: 16px;">
+        <span class="badge green">Project 3</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; margin-top: 6px;">
+          Automotive Engine Temp & PWM Fan Controller
+        </h2>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="sim">🚀 Live Interactive Simulator</button>
+        <button class="modal-tab-btn" data-tab="code">💻 ADC Driver & Hysteresis</button>
+      </div>
+
+      <!-- TAB PANE 1: Simulator -->
+      <div class="modal-tab-pane active" data-pane="sim">
+        <div class="sim-container" style="margin-top: 10px; margin-bottom: 16px;">
+          <div class="sim-hardware-box">
+            <div class="sim-box-title">
+              <span>🌡️ Engine Temperature Input</span>
+              <span class="badge green">12-bit ADC</span>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <label style="font-size: 0.85rem; font-weight: 600;">Engine Coolant Temp:</label>
+                <span id="autoTempDisplay_p3" style="font-weight: 700; color: var(--accent-emerald);">75.0 °C</span>
+              </div>
+              <input type="range" id="autoTempSlider_p3" min="40" max="120" value="75" step="1" style="width: 100%;">
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);">
+              Thresholds: &lt;65°C: Fan OFF | 65-85°C: 30% PWM | 85-105°C: Dynamic PID | &gt;105°C: 100% Emergency
+            </div>
+          </div>
+
+          <div class="sim-telemetry-box">
+            <div class="sim-box-title">
+              <span>🌀 Cooling System Response</span>
+              <span id="autoStateBadge_p3" class="badge blue">FAN ACTIVE</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div style="background: var(--bg-tertiary); padding: 12px; border-radius: var(--radius-sm);">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">ADC RAW VALUE (12-BIT)</div>
+                <div id="autoAdcDisplay_p3" style="font-size: 1.3rem; font-weight: 800; color: var(--text-main);">0xA00 (2560)</div>
+              </div>
+              <div style="background: var(--bg-tertiary); padding: 12px; border-radius: var(--radius-sm);">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">PWM FAN SPEED</div>
+                <div id="autoPwmDisplay_p3" style="font-size: 1.3rem; font-weight: 800; color: var(--accent-emerald);">30 % PWM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB PANE 2: Code -->
+      <div class="modal-tab-pane" data-pane="code">
+        <div style="font-size: 0.92rem; line-height: 1.65;">
+          <div class="code-viewer">
+            <div class="code-header">
+              <span class="code-title">adc_temp_sampler.c — Filtered ADC Acquisition</span>
+              <span class="badge green">ARM Cortex-M</span>
+            </div>
+            <pre class="code-body"><span class="code-kw">uint16_t</span> <span class="code-fn">read_engine_temp_adc</span>(<span class="code-kw">void</span>) {
+    ADC1->CR2 |= <span class="code-var">ADC_CR2_SWSTART</span>;
+    <span class="code-kw">while</span> (!(ADC1->SR & <span class="code-var">ADC_SR_EOC</span>));
+    <span class="code-kw">uint16_t</span> raw_adc = ADC1->DR;
+    
+    <span class="code-cmt">/* 8-sample exponential moving average */</span>
+    <span class="code-kw">static uint32_t</span> filtered = <span class="code-num">0</span>;
+    filtered = (filtered * <span class="code-num">7</span> + raw_adc) / <span class="code-num">8</span>;
+    <span class="code-kw">return</span> (<span class="code-kw">uint16_t</span>)filtered;
+}</pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECT 4 MODAL: Smart Railway Gate Automation -->
+  <div class="modal-backdrop" id="projectModal4">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 14px; margin-bottom: 16px;">
+        <span class="badge blue">Project 4</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; margin-top: 6px;">
+          Smart Railway Level Crossing Gate Automation
+        </h2>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="sim">🚀 Live Interactive Simulator</button>
+        <button class="modal-tab-btn" data-tab="code">💻 Interrupt Driver Code</button>
+      </div>
+
+      <!-- TAB PANE 1: Simulator -->
+      <div class="modal-tab-pane active" data-pane="sim">
+        <div class="sim-container" style="margin-top: 10px; margin-bottom: 16px;">
+          <div class="sim-hardware-box">
+            <div class="sim-box-title">
+              <span>🚂 Train Detection Controls</span>
+              <span class="badge blue">Dual IR Sensors</span>
+            </div>
+            <div style="display: flex; gap: 10px; margin-bottom: 16px;">
+              <button class="btn btn-primary" id="railTriggerBtn_p4" style="flex: 1; font-size: 0.85rem;">
+                Train Approach (IR A)
+              </button>
+              <button class="btn btn-outline" id="railClearBtn_p4" style="flex: 1; font-size: 0.85rem;">
+                Train Passed (IR B)
+              </button>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);">
+              Detects approach via EXTI0 edge interrupt, deploys servo to 90°, and engages warning alarm.
+            </div>
+          </div>
+
+          <div class="sim-telemetry-box">
+            <div class="sim-box-title">
+              <span>🚧 Gate & Sensor Status</span>
+              <span id="railStatusText_p4" class="badge green">✅ TRACK CLEAR</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div style="background: var(--bg-tertiary); padding: 12px; border-radius: var(--radius-sm);">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">SERVO PWM ANGLE</div>
+                <div id="railServoAngle_p4" style="font-size: 1.3rem; font-weight: 800; color: var(--text-main);">0° (OPEN)</div>
+              </div>
+              <div style="background: var(--bg-tertiary); padding: 12px; border-radius: var(--radius-sm);">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">IR SENSOR A STATE</div>
+                <div id="railIrA_p4" style="font-size: 1.1rem; font-weight: 700; color: var(--accent-emerald);">CLEAR (5V)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB PANE 2: Code -->
+      <div class="modal-tab-pane" data-pane="code">
+        <div style="font-size: 0.92rem; line-height: 1.65;">
+          <div class="code-viewer">
+            <div class="code-header">
+              <span class="code-title">rail_gate_isr.c — Edge Interrupt Routine</span>
+              <span class="badge blue">Bare-Metal C</span>
+            </div>
+            <pre class="code-body"><span class="code-kw">void</span> <span class="code-fn">EXTI0_IRQHandler</span>(<span class="code-kw">void</span>) {
+    <span class="code-kw">if</span> (EXTI->PR & <span class="code-var">EXTI_PR_PR0</span>) {
+        EXTI->PR |= <span class="code-var">EXTI_PR_PR0</span>;  <span class="code-cmt">/* Clear interrupt flag */</span>
+        <span class="code-fn">servo_set_angle</span>(<span class="code-num">90</span>);     <span class="code-cmt">/* Lower gate barrier */</span>
+        <span class="code-fn">siren_enable</span>(<span class="code-num">1</span>);         <span class="code-cmt">/* Sound warning alarm */</span>
+    }
+}</pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECT 5 MODAL: Ibex RISC-V SoC Demo System -->
+  <div class="modal-backdrop" id="projectModal5">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 14px; margin-bottom: 16px;">
+        <span class="badge amber">Project 5</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem; margin-top: 6px;">
+          Ibex RISC-V SoC Demo System (Xilinx Artix-7 FPGA)
+        </h2>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="sim">🚀 Live Interactive Simulator</button>
+        <button class="modal-tab-btn" data-tab="code">💻 Verilog SoC Top & Diagram</button>
+      </div>
+
+      <!-- TAB PANE 1: Simulator -->
+      <div class="modal-tab-pane active" data-pane="sim">
+        <div class="sim-container" style="margin-top: 10px; margin-bottom: 16px;">
+          <div class="sim-hardware-box">
+            <div class="sim-box-title">
+              <span>💎 FPGA Clock Frequency Slider</span>
+              <span id="ibexFreqText_p5" class="badge amber">50 MHz</span>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <input type="range" id="ibexFreqSlider_p5" min="20" max="100" value="50" step="10" style="width: 100%;">
+            </div>
+            <div style="background: var(--bg-tertiary); padding: 12px; border-radius: var(--radius-sm); margin-bottom: 12px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted);">COMPUTED CORE THROUGHPUT</div>
+              <div id="ibexMipsText_p5" style="font-size: 1.4rem; font-weight: 800; color: var(--accent-emerald);">43.5 MIPS</div>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">
+              RV32IMC 2-stage pipeline executing at CPI = 1.15.
+            </div>
+          </div>
+
+          <div class="sim-telemetry-box">
+            <div class="sim-box-title">
+              <span>📡 Pipeline & UART Telemetry</span>
+              <span class="badge green">PIPELINE RUNNING</span>
+            </div>
+            <div style="background: var(--code-bg); padding: 12px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.85rem; color: #F8FAFC;">
+              <div>PC: <span id="ibexPcVal_p5" style="color: #6EE7B7;">0x80000000</span></div>
+              <div>ASM: <span id="ibexAsmVal_p5" style="color: #FBBF24;">lui sp, 0x80004</span></div>
+              <div style="font-size: 0.75rem; color: #94A3B8; margin-top: 4px;" id="ibexRegVal_p5">x10/a0 = 0x40000000 | CPI = 1.15</div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-emerald);" id="ibexUartText_p5">
+              [IBEX RISC-V SOC] | FREQ=50MHz | BAUD=115200 | RV32IMC OK
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB PANE 2: Verilog Code & Architecture -->
+      <div class="modal-tab-pane" data-pane="code">
+        <div style="font-size: 0.92rem; line-height: 1.65;">
+          <div style="margin-bottom: 16px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <img src="assets/ibex-riscv-soc.jpg" alt="Ibex RISC-V Architecture Diagram" style="width: 100%; display: block;">
+          </div>
+          <div class="code-viewer">
+            <div class="code-header">
+              <span class="code-title">ibex_soc_top.sv — SystemVerilog SoC Core Instantiation</span>
+              <span class="badge amber">SystemVerilog</span>
+            </div>
+            <pre class="code-body"><span class="code-kw">module</span> <span class="code-fn">ibex_soc_top</span> (
+    <span class="code-kw">input</span>  <span class="code-kw">wire</span> clk_sys, rst_sys_n,
+    <span class="code-kw">output</span> <span class="code-kw">wire</span> uart_tx,
+    <span class="code-kw">input</span>  <span class="code-kw">wire</span> uart_rx
+);
+    <span class="code-fn">ibex_core</span> #(
+        .<span class="code-var">PMPEnable</span>(<span class="code-num">0</span>), .<span class="code-var">RV32M</span>(ibex_pkg::<span class="code-var">RV32MFast</span>)
+    ) cpu_i (
+        .<span class="code-var">clk_i</span>(clk_sys), .<span class="code-var">rst_ni</span>(rst_sys_n),
+        .<span class="code-var">instr_req_o</span>(instr_req), .<span class="code-var">instr_addr_o</span>(instr_addr),
+        .<span class="code-var">data_req_o</span>(data_req),   .<span class="code-var">data_addr_o</span>(data_addr)
+    );
+<span class="code-kw">endmodule</span></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="/js/simulator.js"></script>
+  <script src="/js/app.js"></script>
+  <script>
+    // Bind Hero Resume Button
+    document.getElementById('heroResumeBtn')?.addEventListener('click', () => {
+      document.getElementById('resumeModal')?.classList.add('active');
+    });
+  </script>
+</body>
+</html>
