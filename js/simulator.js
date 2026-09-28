@@ -173,6 +173,9 @@ class FirmwareSimulator {
 
   drawPWMWaveform() {
     const ctx = this.ctx;
+    if (this.canvas.clientWidth && this.canvas.width !== this.canvas.clientWidth) {
+      this.canvas.width = this.canvas.clientWidth;
+    }
     const width = this.canvas.width;
     const height = this.canvas.height;
     const dutyPercent = this.states[this.currentState].pwm;
@@ -189,7 +192,7 @@ class FirmwareSimulator {
       ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
     }
 
-    ctx.strokeStyle = dutyPercent > 50 ? '#F43F5E' : (dutyPercent > 0 ? '#3B82F6' : '#64748B');
+    ctx.strokeStyle = dutyPercent > 50 ? '#EF4444' : (dutyPercent > 0 ? '#10B981' : '#64748B');
     ctx.lineWidth = 2.5;
 
     const period = 80;

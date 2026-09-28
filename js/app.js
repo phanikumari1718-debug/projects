@@ -5,6 +5,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
+  initMobileMenu();
+  initNavActiveUnderline();
   initProjectFilters();
   initArchTabs();
   initModals();
@@ -12,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyToClipboard();
 });
 
-/* Theme Toggle (Dark / Light) */
+/* Theme Toggle (Light / Dark) */
 function initThemeToggle() {
   const toggleBtn = document.getElementById('themeToggleBtn');
-  const savedTheme = localStorage.getItem('theme') || 'dark';
+  const savedTheme = localStorage.getItem('theme') || 'light';
 
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
@@ -37,6 +39,109 @@ function updateThemeIcon(theme) {
   if (icon) {
     icon.textContent = theme === 'dark' ? '☀️' : '🌙';
   }
+}
+
+/* Mobile Navigation Menu Toggle */
+function initMobileMenu() {
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const drawer = document.getElementById('mobileNavDrawer');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (menuBtn && drawer) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = drawer.classList.contains('open');
+      if (isOpen) {
+        drawer.classList.remove('open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        drawer.classList.add('open');
+        menuBtn.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Close menu when clicking on any link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close when tapping outside
+    document.addEventListener('click', (e) => {
+      if (!drawer.contains(e.target) && !menuBtn.contains(e.target)) {
+        drawer.classList.remove('open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+}
+
+/* Navbar Active Underline & Scroll-Spy */
+function initNavActiveUnderline() {
+  const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+  const sections = document.querySelectorAll('section[id]');
+  let isManualClick = false;
+  let manualScrollTimeout = null;
+
+  function setActiveLink(targetId) {
+    if (!targetId) return;
+    const cleanId = targetId.replace(/^#/, '');
+    allNavLinks.forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === `#${cleanId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  // Click handler to immediately update the active underline
+  allNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        setActiveLink(href);
+        // Lock scroll spy briefly while smooth scrolling to target
+        isManualClick = true;
+        clearTimeout(manualScrollTimeout);
+        manualScrollTimeout = setTimeout(() => {
+          isManualClick = false;
+        }, 850);
+      }
+    });
+  });
+
+  // Scroll spy to update the active underline as user scrolls through sections
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (isManualClick) return;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -65% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(sec => observer.observe(sec));
+  }
+
+  // Detect bottom of page so Contact link activates even on short displays
+  window.addEventListener('scroll', () => {
+    if (isManualClick) return;
+    if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60)) {
+      setActiveLink('contact');
+    }
+  }, { passive: true });
 }
 
 /* Project Category Filter */
@@ -154,13 +259,25 @@ function initArchTabs() {
 /* Modals Management (Resume + 5 Project Deep-Dives) */
 function initModals() {
   const resumeBtn = document.getElementById('openResumeBtn');
+  const mobileResumeBtn = document.getElementById('mobileOpenResumeBtn');
   const resumeModal = document.getElementById('resumeModal');
   const modalCloses = document.querySelectorAll('.modal-close');
 
-  if (resumeBtn && resumeModal) {
-    resumeBtn.addEventListener('click', () => {
-      resumeModal.classList.add('active');
-    });
+  if (resumeModal) {
+    if (resumeBtn) {
+      resumeBtn.addEventListener('click', () => {
+        resumeModal.classList.add('active');
+      });
+    }
+    if (mobileResumeBtn) {
+      mobileResumeBtn.addEventListener('click', () => {
+        resumeModal.classList.add('active');
+        const drawer = document.getElementById('mobileNavDrawer');
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        if (drawer) drawer.classList.remove('open');
+        if (menuBtn) menuBtn.classList.remove('active');
+      });
+    }
   }
 
   // Project Deep-Dive Triggers

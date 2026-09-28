@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +12,17 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-container">
-      <div class="nav-brand">
-        <div class="brand-avatar">PK</div>
+      <a href="#hero" class="nav-brand" style="text-decoration: none;">
         <div class="brand-info">
           <div class="brand-name">Phani Kumari <span>Boda</span></div>
           <div class="brand-title">Embedded Systems & Firmware Engineer</div>
         </div>
-      </div>
+      </a>
 
       <ul class="nav-links">
         <li><a href="#hero" class="active">Overview</a></li>
-        <li><a href="#projects">All 5 Projects & Demos</a></li>
         <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#projects">Projects & Demos</a></li>
         <li><a href="#testing">Verification</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Timeline</a></li>
@@ -31,13 +30,39 @@
       </ul>
 
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggleBtn" title="Toggle Theme">
-          <span id="themeIcon">☀️</span>
-        </button>
-        <button class="btn btn-outline" id="openResumeBtn">
+        <button class="btn btn-outline nav-desktop-action" id="openResumeBtn">
           <span>📄</span> Resume
         </button>
-        <a href="#projects" class="btn btn-primary">
+        <a href="#projects" class="btn btn-primary nav-desktop-action">
+          <span>🚀</span> Live Project Demos
+        </a>
+        <button class="theme-toggle" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle Theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-link active">Overview</a></li>
+        <li><a href="#architecture" class="mobile-nav-link">Architecture</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects & Demos</a></li>
+        <li><a href="#testing" class="mobile-nav-link">Verification</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Timeline</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-actions">
+        <button class="btn btn-outline" id="mobileOpenResumeBtn" style="width: 100%; justify-content: center;">
+          <span>📄</span> View Resume
+        </button>
+        <a href="#projects" class="btn btn-primary mobile-nav-link" style="width: 100%; justify-content: center;">
           <span>🚀</span> Live Project Demos
         </a>
       </div>
@@ -105,7 +130,7 @@
               <span class="status-dot"></span>
               <span>SYSTEM: ONLINE (ARM CORTEX-M)</span>
             </div>
-            <div class="telemetry-item" style="color: var(--accent-blue);">
+            <div class="telemetry-item" style="color: var(--accent-emerald);">
               <span>10ms ISR TICK</span>
             </div>
           </div>
