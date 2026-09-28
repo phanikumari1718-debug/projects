@@ -631,11 +631,16 @@
           </div>
         </div>
 
+        <div style="margin-bottom: 24px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-glow); box-shadow: var(--shadow-sm);">
+          <img src="assets/ibex-riscv-soc.jpg" alt="Ibex RISC-V SoC Architecture Blueprint & FPGA Board Layout" style="width: 100%; height: auto; display: block;">
+        </div>
+
         <div style="font-size: 0.95rem; line-height: 1.7;">
           <h4 style="color: var(--accent-amber); margin-bottom: 8px;">SystemVerilog SoC Interconnect & C Firmware Flow</h4>
           <p style="color: var(--text-muted); margin-bottom: 16px;">
             The top-level SoC module <code>ibex_soc_top.sv</code> instantiates the open-source Ibex RV32IMC CPU core, instruction BRAM, data BRAM, memory-mapped address decoder, and UART peripheral. Bare-metal C code compiled with <code>riscv32-unknown-elf-gcc</code> handles memory-mapped I/O and timer interrupt traps.
           </p>
+
           <div class="code-viewer">
             <div class="code-header">
               <span class="code-title">ibex_soc_top.sv — SystemVerilog SoC Module</span>
