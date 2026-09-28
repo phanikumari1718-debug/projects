@@ -1,11 +1,11 @@
 /* ==========================================================================
    Phani Kumari Boda Portfolio — Multi-Project Firmware & Hardware Simulators
-   Powers Interactive Simulators for ALL 5 Projects:
+   Powers Dedicated Live Interactive Simulators for ALL 5 Projects:
    1. Washing Machine FSM & PWM Scope
    2. EV Battery BMS & EKF Thermal Protection Loop
    3. Automotive Temp ADC & PID Hysteresis Fan Controller
    4. Railway Level Crossing IR & Servo Gate Controller
-   5. FPGA 8-Tap DSP FIR Filter Frequency Response
+   5. Ibex RISC-V SoC Demo System & CPU Pipeline Telemetry
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -38,38 +38,21 @@ class FirmwareSimulator {
   init() {
     document.addEventListener('DOMContentLoaded', () => {
       this.cacheDOM();
-      this.bindEvents();
       this.updateLCDDisplay();
-      this.updateFSMIndicators();
       this.initCanvas();
     });
   }
 
   cacheDOM() {
-    this.lcdLine1 = document.getElementById('lcdLine1');
-    this.lcdLine2 = document.getElementById('lcdLine2');
-    this.pwmText = document.getElementById('pwmDutyText');
-    this.statePills = document.querySelectorAll('.fsm-state-pill');
-    this.canvas = document.getElementById('pwmScopeCanvas');
+    this.lcdLine1 = document.getElementById('lcdLine1_p1');
+    this.lcdLine2 = document.getElementById('lcdLine2_p1');
+    this.canvas = document.getElementById('pwmScopeCanvas_p1');
     if (this.canvas) {
       this.ctx = this.canvas.getContext('2d');
     }
   }
 
-  bindEvents() {
-    const keypad = document.getElementById('keypadGrid');
-    if (keypad) {
-      keypad.addEventListener('click', (e) => {
-        const btn = e.target.closest('.key-btn');
-        if (!btn) return;
-        const key = btn.getAttribute('data-key');
-        this.handleKeyPress(key);
-      });
-    }
-  }
-
   handleKeyPress(key) {
-    this.triggerKeyEffect(key);
     switch (key) {
       case 'START':
         if (this.currentState === 'IDLE') this.startCycle('WASH');
@@ -94,20 +77,11 @@ class FirmwareSimulator {
     }
   }
 
-  triggerKeyEffect(key) {
-    const btn = document.querySelector(`.key-btn[data-key="${key}"]`);
-    if (btn) {
-      btn.style.transform = 'scale(0.92)';
-      setTimeout(() => { btn.style.transform = ''; }, 120);
-    }
-  }
-
   startCycle(initialState = 'WASH') {
     this.currentState = initialState;
     this.remainingSeconds = this.states[initialState].time;
     this.runTimer();
     this.updateLCDDisplay();
-    this.updateFSMIndicators();
   }
 
   pauseCycle() {
@@ -115,14 +89,12 @@ class FirmwareSimulator {
     this.currentState = 'PAUSED';
     clearInterval(this.timerInterval);
     this.updateLCDDisplay();
-    this.updateFSMIndicators();
   }
 
   resumeCycle() {
     this.currentState = this.savedState;
     this.runTimer();
     this.updateLCDDisplay();
-    this.updateFSMIndicators();
   }
 
   cancelCycle() {
@@ -130,7 +102,6 @@ class FirmwareSimulator {
     this.remainingSeconds = 0;
     clearInterval(this.timerInterval);
     this.updateLCDDisplay();
-    this.updateFSMIndicators();
   }
 
   toggleMode() {
@@ -168,7 +139,6 @@ class FirmwareSimulator {
         this.currentState = nextState;
         this.remainingSeconds = this.states[nextState].time;
         this.updateLCDDisplay();
-        this.updateFSMIndicators();
       }
     }
   }
@@ -190,19 +160,6 @@ class FirmwareSimulator {
 
     if (this.lcdLine1) this.lcdLine1.innerHTML = `${line1}<span class="lcd-cursor"></span>`;
     if (this.lcdLine2) this.lcdLine2.textContent = line2;
-    if (this.pwmText) this.pwmText.textContent = `${stateObj.pwm}%`;
-  }
-
-  updateFSMIndicators() {
-    this.statePills.forEach(pill => {
-      const stateName = pill.getAttribute('data-state');
-      pill.className = 'fsm-state-pill';
-      if (stateName === this.currentState) {
-        if (stateName === 'PAUSED') pill.classList.add('paused');
-        else if (stateName === 'DONE') pill.classList.add('done');
-        else pill.classList.add('active');
-      }
-    });
   }
 
   initCanvas() {
@@ -267,8 +224,8 @@ class EVBMSSimulator {
   }
 
   init() {
-    const tempSlider = document.getElementById('bmsTempSlider');
-    const currSlider = document.getElementById('bmsCurrentSlider');
+    const tempSlider = document.getElementById('bmsTempSlider_p2');
+    const currSlider = document.getElementById('bmsCurrentSlider_p2');
 
     if (tempSlider && currSlider) {
       tempSlider.addEventListener('input', () => this.update());
@@ -278,27 +235,25 @@ class EVBMSSimulator {
   }
 
   update() {
-    const temp = parseFloat(document.getElementById('bmsTempSlider').value);
-    const current = parseFloat(document.getElementById('bmsCurrentSlider').value);
+    const temp = parseFloat(document.getElementById('bmsTempSlider_p2').value);
+    const current = parseFloat(document.getElementById('bmsCurrentSlider_p2').value);
 
-    const tempVal = document.getElementById('bmsTempVal');
-    const currVal = document.getElementById('bmsCurrentVal');
-    const socVal = document.getElementById('bmsSocVal');
-    const ekfVal = document.getElementById('bmsEkfVal');
-    const relayBadge = document.getElementById('bmsRelayBadge');
-    const canFrame = document.getElementById('bmsCanFrame');
+    const tempVal = document.getElementById('bmsTempVal_p2');
+    const currVal = document.getElementById('bmsCurrentVal_p2');
+    const socVal = document.getElementById('bmsSocVal_p2');
+    const ekfVal = document.getElementById('bmsEkfVal_p2');
+    const relayBadge = document.getElementById('bmsRelayBadge_p2');
+    const canFrame = document.getElementById('bmsCanFrame_p2');
 
     if (tempVal) tempVal.textContent = `${temp.toFixed(1)} °C`;
     if (currVal) currVal.textContent = `${current.toFixed(1)} A`;
 
-    // SOC Calculation (EKF Correction based on cell temperature drift)
     let soc = Math.max(0, Math.min(100, 85.5 - (current * 0.15)));
     let ekfError = 0.02 + (temp > 45 ? (temp - 45) * 0.005 : 0);
 
     if (socVal) socVal.textContent = `${soc.toFixed(1)} %`;
     if (ekfVal) ekfVal.textContent = `± ${(ekfError * 100).toFixed(2)} %`;
 
-    // Thermal Relay Protection Stateflow Logic
     if (temp >= 60 || current >= 90) {
       if (relayBadge) {
         relayBadge.className = 'badge red';
@@ -332,7 +287,7 @@ class AutomotiveTempSimulator {
   }
 
   init() {
-    const tempInput = document.getElementById('autoTempSlider');
+    const tempInput = document.getElementById('autoTempSlider_p3');
     if (tempInput) {
       tempInput.addEventListener('input', () => this.update());
       this.update();
@@ -340,16 +295,14 @@ class AutomotiveTempSimulator {
   }
 
   update() {
-    const temp = parseFloat(document.getElementById('autoTempSlider').value);
-    const tempDisplay = document.getElementById('autoTempDisplay');
-    const adcDisplay = document.getElementById('autoAdcDisplay');
-    const pwmDisplay = document.getElementById('autoPwmDisplay');
-    const stateBadge = document.getElementById('autoStateBadge');
+    const temp = parseFloat(document.getElementById('autoTempSlider_p3').value);
+    const tempDisplay = document.getElementById('autoTempDisplay_p3');
+    const adcDisplay = document.getElementById('autoAdcDisplay_p3');
+    const pwmDisplay = document.getElementById('autoPwmDisplay_p3');
+    const stateBadge = document.getElementById('autoStateBadge_p3');
 
-    // 12-bit ADC calculation (0-4095 for 0-120°C)
     const adcRaw = Math.round((temp / 120) * 4095);
     
-    // PID & Hysteresis Logic
     let pwmDuty = 0;
     let stateText = 'FAN OFF (COOL)';
     let badgeClass = 'badge green';
@@ -359,7 +312,6 @@ class AutomotiveTempSimulator {
       stateText = '🚨 CRITICAL OVERHEAT: 100% FAN + ENGINE WARN';
       badgeClass = 'badge red';
     } else if (temp >= 85) {
-      // Linear PID region
       pwmDuty = Math.round(30 + ((temp - 85) / 20) * 60);
       stateText = '🔥 HIGH TEMP: PID REGULATION ACTIVE';
       badgeClass = 'badge amber';
@@ -394,8 +346,8 @@ class RailwayGateSimulator {
   }
 
   init() {
-    const triggerBtn = document.getElementById('railTriggerBtn');
-    const clearBtn = document.getElementById('railClearBtn');
+    const triggerBtn = document.getElementById('railTriggerBtn_p4');
+    const clearBtn = document.getElementById('railClearBtn_p4');
 
     if (triggerBtn && clearBtn) {
       triggerBtn.addEventListener('click', () => this.simulateTrainApproach());
@@ -404,11 +356,10 @@ class RailwayGateSimulator {
   }
 
   simulateTrainApproach() {
-    const irA = document.getElementById('railIrA');
-    const irB = document.getElementById('railIrB');
-    const servoAngle = document.getElementById('railServoAngle');
-    const statusText = document.getElementById('railStatusText');
-    const gateVisual = document.getElementById('railGateVisual');
+    const irA = document.getElementById('railIrA_p4');
+    const irB = document.getElementById('railIrB_p4');
+    const servoAngle = document.getElementById('railServoAngle_p4');
+    const statusText = document.getElementById('railStatusText_p4');
 
     if (irA) irA.textContent = 'DETECTED (0V)';
     if (irB) irB.textContent = 'ARMED';
@@ -417,15 +368,13 @@ class RailwayGateSimulator {
       statusText.className = 'badge red';
       statusText.textContent = '🚨 TRAIN APPROACHING — GATE DOWN — SIREN ON';
     }
-    if (gateVisual) gateVisual.style.transform = 'rotate(0deg)'; // horizontal closed
   }
 
   simulateTrainPass() {
-    const irA = document.getElementById('railIrA');
-    const irB = document.getElementById('railIrB');
-    const servoAngle = document.getElementById('railServoAngle');
-    const statusText = document.getElementById('railStatusText');
-    const gateVisual = document.getElementById('railGateVisual');
+    const irA = document.getElementById('railIrA_p4');
+    const irB = document.getElementById('railIrB_p4');
+    const servoAngle = document.getElementById('railServoAngle_p4');
+    const statusText = document.getElementById('railStatusText_p4');
 
     if (irA) irA.textContent = 'CLEAR (5V)';
     if (irB) irB.textContent = 'PASSED (0V)';
@@ -434,83 +383,67 @@ class RailwayGateSimulator {
       statusText.className = 'badge green';
       statusText.textContent = '✅ TRACK CLEAR — GATE UP — SAFE';
     }
-    if (gateVisual) gateVisual.style.transform = 'rotate(-75deg)'; // vertical open
   }
 }
 
 /* --------------------------------------------------------------------------
-   5. FPGA 8-Tap DSP FIR Filter Simulator
+   5. Ibex RISC-V SoC Demo System Simulator
    -------------------------------------------------------------------------- */
-class FPGAFilterSimulator {
+class IbexSoCSimulator {
   constructor() {
+    this.pc = 0x80000000;
+    this.instructions = [
+      { pc: '0x80000000', asm: 'lui  sp, 0x80004', desc: 'Initialize stack pointer' },
+      { pc: '0x80000004', asm: 'jal  ra, main',     desc: 'Jump to main C routine' },
+      { pc: '0x80000100', asm: 'li   a0, 0x40000000', desc: 'Load UART Base Address' },
+      { pc: '0x80000104', asm: 'li   a1, 0x55',       desc: 'Load Tx byte 0x55 (ASCII "U")' },
+      { pc: '0x80000108', asm: 'sw   a1, 0(a0)',      desc: 'Write to UART Tx register' },
+      { pc: '0x8000010C', asm: 'lw   a2, 4(a0)',      desc: 'Read UART status flag' }
+    ];
+    this.instIdx = 0;
+    this.timer = null;
+
     document.addEventListener('DOMContentLoaded', () => {
       this.init();
     });
   }
 
   init() {
-    this.canvas = document.getElementById('firCanvas');
-    if (this.canvas) {
-      this.ctx = this.canvas.getContext('2d');
-      this.drawFrequencyResponse(25); // Default 25MHz cutoff
+    const freqSlider = document.getElementById('ibexFreqSlider_p5');
+    if (freqSlider) {
+      freqSlider.addEventListener('input', (e) => this.updateFreq(parseFloat(e.target.value)));
+      this.updateFreq(50);
     }
-
-    const slider = document.getElementById('firCutoffSlider');
-    if (slider) {
-      slider.addEventListener('input', (e) => {
-        const cutoff = parseFloat(e.target.value);
-        const text = document.getElementById('firCutoffText');
-        if (text) text.textContent = `${cutoff} MHz`;
-        this.drawFrequencyResponse(cutoff);
-      });
-    }
+    this.startPipeline();
   }
 
-  drawFrequencyResponse(cutoff) {
-    if (!this.ctx) return;
-    const ctx = this.ctx;
-    const w = this.canvas.width;
-    const h = this.canvas.height;
+  updateFreq(freqMHz) {
+    const freqText = document.getElementById('ibexFreqText_p5');
+    const mipsText = document.getElementById('ibexMipsText_p5');
+    const uartText = document.getElementById('ibexUartText_p5');
 
-    ctx.fillStyle = '#0D1117';
-    ctx.fillRect(0, 0, w, h);
+    if (freqText) freqText.textContent = `${freqMHz} MHz`;
+    
+    // CPI = 1.15 for RV32IMC core
+    const mips = (freqMHz / 1.15).toFixed(1);
+    if (mipsText) mipsText.textContent = `${mips} MIPS`;
+    if (uartText) uartText.textContent = `[IBEX RISC-V SOC] | FREQ=${freqMHz}MHz | BAUD=115200 | RV32IMC OK`;
+  }
 
-    // Grid lines
-    ctx.strokeStyle = '#21262D';
-    ctx.lineWidth = 1;
-    for (let x = 0; x < w; x += 50) {
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
-    }
-    for (let y = 0; y < h; y += 25) {
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
-    }
+  startPipeline() {
+    if (this.timer) clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      const inst = this.instructions[this.instIdx];
+      const pcEl = document.getElementById('ibexPcVal_p5');
+      const asmEl = document.getElementById('ibexAsmVal_p5');
+      const regEl = document.getElementById('ibexRegVal_p5');
 
-    // Filter Response Curve
-    ctx.strokeStyle = '#10B981';
-    ctx.lineWidth = 3;
-    ctx.beginPath();
+      if (pcEl) pcEl.textContent = inst.pc;
+      if (asmEl) asmEl.textContent = inst.asm;
+      if (regEl) regEl.textContent = `x10/a0 = 0x40000000 | CPI = 1.15`;
 
-    const cutoffX = (cutoff / 50) * w; // 50MHz Nyquist
-
-    ctx.moveTo(0, 20); // 0dB
-    ctx.lineTo(cutoffX * 0.8, 20);
-    ctx.quadraticCurveTo(cutoffX, 20, cutoffX * 1.2, h - 20); // Roll-off
-    ctx.lineTo(w, h - 15); // Stopband attenuation (-40dB)
-    ctx.stroke();
-
-    // Cutoff Marker Line
-    ctx.strokeStyle = '#F59E0B';
-    ctx.lineWidth = 1.5;
-    ctx.setLineDash([4, 4]);
-    ctx.beginPath();
-    ctx.moveTo(cutoffX, 0);
-    ctx.lineTo(cutoffX, h);
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    ctx.fillStyle = '#F59E0B';
-    ctx.font = '11px JetBrains Mono';
-    ctx.fillText(`Fc = ${cutoff}MHz (-3dB)`, cutoffX + 6, 35);
+      this.instIdx = (this.instIdx + 1) % this.instructions.length;
+    }, 1200);
   }
 }
 
@@ -519,4 +452,4 @@ window.simulator = new FirmwareSimulator();
 window.evBmsSim = new EVBMSSimulator();
 window.autoTempSim = new AutomotiveTempSimulator();
 window.railSim = new RailwayGateSimulator();
-window.fpgaSim = new FPGAFilterSimulator();
+window.ibexSim = new IbexSoCSimulator();

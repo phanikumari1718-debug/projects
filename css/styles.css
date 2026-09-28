@@ -1291,3 +1291,40 @@ footer {
     display: none; /* Can be toggled on mobile */
   }
 }
+
+/* In-Page Project Deep Dive Showcase Panels */
+.project-deepdive-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-top: 36px;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.project-deepdive-panel:hover {
+  border-color: var(--border-glow);
+}
+
+.project-deepdive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.project-deepdive-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
