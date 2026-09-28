@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Venkata Phani Kumari Boda | Embedded Systems & Firmware Engineer Portfolio</title>
-  <meta name="description" content="Complete Portfolio of Venkata Phani Kumari Boda — Embedded Systems & Firmware Engineer. B.Tech ECE @ SRM University AP (CGPA 9.13). Comprehensive deep-dives for all projects: Bare-Metal C, ARM Cortex-M, ESP32, FSM, PWM, MATLAB/Simulink, FPGA Verilog.">
+  <meta name="description" content="Complete Portfolio of Venkata Phani Kumari Boda — Embedded Systems & Firmware Engineer. B.Tech ECE @ SRM University AP (CGPA 9.13). Live interactive simulators, schematics, code details, and working flows for ALL 5 engineering projects.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -22,9 +22,8 @@
 
       <ul class="nav-links">
         <li><a href="#hero" class="active">Overview</a></li>
-        <li><a href="#simulator">Live Simulator</a></li>
+        <li><a href="#projects">All 5 Projects & Demos</a></li>
         <li><a href="#architecture">Architecture</a></li>
-        <li><a href="#projects">All Projects</a></li>
         <li><a href="#testing">Verification</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Timeline</a></li>
@@ -39,7 +38,7 @@
           <span>📄</span> Resume
         </button>
         <a href="#projects" class="btn btn-primary">
-          <span>📂</span> Explore All 5 Projects
+          <span>🚀</span> Live Project Demos
         </a>
       </div>
     </div>
@@ -56,7 +55,7 @@
           Architecting <span class="gradient-text">Predictable, High-Performance</span> Firmware & Hardware Systems
         </h1>
         <p class="hero-subtitle">
-          Complete engineering portfolio featuring in-depth schematics, code architecture, closed-loop models, Verilog HDL synthesis, and interactive hardware simulators for all 5 projects.
+          Complete engineering portfolio featuring live interactive hardware simulators, working flow diagrams, C/Verilog/MATLAB code snippets, schematics, and test matrices for ALL 5 Projects.
         </p>
 
         <div class="hero-badges">
@@ -69,11 +68,11 @@
         </div>
 
         <div class="hero-cta">
-          <a href="#simulator" class="btn btn-primary">
-            <span>🚀</span> Interactive LCD/PWM Sim
+          <a href="#projects" class="btn btn-primary">
+            <span>🚀</span> Explore All 5 Live Project Demos
           </a>
-          <a href="#projects" class="btn btn-outline">
-            <span>🔍</span> Full Project Deep-Dives
+          <a href="#architecture" class="btn btn-outline">
+            <span>📐</span> 4-Layer Architecture
           </a>
         </div>
 
@@ -83,8 +82,8 @@
             <span class="stat-label">B.Tech CGPA</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">5 Projects</span>
-            <span class="stat-label">Complete Details</span>
+            <span class="stat-num">5 Live Demos</span>
+            <span class="stat-label">All Projects Covered</span>
           </div>
           <div class="stat-item">
             <span class="stat-num">&lt; 2 µs</span>
@@ -92,7 +91,7 @@
           </div>
           <div class="stat-item">
             <span class="stat-num">100%</span>
-            <span class="stat-label">Verified Passing</span>
+            <span class="stat-label">HIL Test Pass</span>
           </div>
         </div>
       </div>
@@ -109,81 +108,6 @@
             <div class="telemetry-item" style="color: var(--accent-blue);">
               <span>10ms ISR TICK</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTERACTIVE FIRMWARE SIMULATOR SECTION -->
-  <section class="simulator-section" id="simulator">
-    <div class="container">
-      <div class="section-tag">Featured Interactive Hardware Simulator</div>
-      <h2 class="section-title">Washing Machine Controller Simulator</h2>
-      <p class="section-desc">
-        Experience the live interactive simulation of the bare-metal C firmware. Click the 3x4 keypad buttons below to trigger matrix interrupt events, change wash modes, and view real-time PWM oscilloscope output.
-      </p>
-
-      <div class="sim-container">
-        <!-- Hardware Box: LCD + Keypad -->
-        <div class="sim-hardware-box">
-          <div class="sim-box-title">
-            <span>📟 Hardware Panel (LCD & 3x4 Matrix Keypad)</span>
-            <span class="badge green" style="font-size: 0.75rem;">10ms Scan</span>
-          </div>
-
-          <!-- LCD Screen -->
-          <div class="lcd-display-case">
-            <div class="lcd-screen-inner">
-              <div class="lcd-line" id="lcdLine1">READY -- PRESS START<span class="lcd-cursor"></span></div>
-              <div class="lcd-line" id="lcdLine2">MODE: STANDARD [3x4]</div>
-            </div>
-          </div>
-
-          <!-- Keypad -->
-          <div class="keypad-grid" id="keypadGrid">
-            <button class="key-btn btn-start" data-key="START">▶ START</button>
-            <button class="key-btn btn-stop" data-key="STOP">⏹ STOP</button>
-            <button class="key-btn" data-key="MODE">⚙ MODE</button>
-            
-            <button class="key-btn" data-key="WASH_DIRECT">1 WASH</button>
-            <button class="key-btn" data-key="RINSE_DIRECT">2 RINSE</button>
-            <button class="key-btn" data-key="SPIN_DIRECT">3 SPIN</button>
-
-            <button class="key-btn" data-key="4">4 OPTION</button>
-            <button class="key-btn" data-key="5">5 DRAIN</button>
-            <button class="key-btn" data-key="6">6 TEMP</button>
-          </div>
-        </div>
-
-        <!-- Telemetry Box: PWM Scope + FSM Tracker -->
-        <div class="sim-telemetry-box">
-          <div class="sim-box-title">
-            <span>📈 Motor PWM Oscilloscope & FSM Telemetry</span>
-            <span class="badge blue" id="pwmDutyText">0% PWM</span>
-          </div>
-
-          <!-- Oscilloscope Canvas -->
-          <div class="scope-container">
-            <div class="scope-header">
-              <span>PWM MOTOR SIGNAL OUTPUT</span>
-              <span>TIM2 10kHz PWM GENERATOR</span>
-            </div>
-            <canvas id="pwmScopeCanvas" class="scope-canvas" width="450" height="120"></canvas>
-          </div>
-
-          <!-- FSM Tracker Pills -->
-          <div class="sim-box-title" style="margin-top: 10px; font-size: 0.95rem;">
-            <span>🔄 Active State Machine Tracker</span>
-          </div>
-          <div class="fsm-states-tracker">
-            <div class="fsm-state-pill active" data-state="IDLE">IDLE</div>
-            <div class="fsm-state-pill" data-state="WASH">WASH (40%)</div>
-            <div class="fsm-state-pill" data-state="RINSE">RINSE (30%)</div>
-            <div class="fsm-state-pill" data-state="SPIN">SPIN (85%)</div>
-            <div class="fsm-state-pill" data-state="DRAIN">DRAIN (0%)</div>
-            <div class="fsm-state-pill" data-state="PAUSED">PAUSED</div>
-            <div class="fsm-state-pill" data-state="DONE">DONE</div>
           </div>
         </div>
       </div>
@@ -271,10 +195,10 @@
   <!-- COMPLETE PROJECTS PORTFOLIO SECTION -->
   <section id="projects" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
     <div class="container">
-      <div class="section-tag">Engineering Portfolio</div>
-      <h2 class="section-title">Complete Details For All 5 Engineering Projects</h2>
+      <div class="section-tag">Complete Engineering Projects</div>
+      <h2 class="section-title">All 5 Projects with Live Interactive Demos & Code Flow</h2>
       <p class="section-desc">
-        Click on <b>"🔍 View Full Deep-Dive & Code"</b> on any project below to open complete technical specifications, interactive simulators, circuit schematics, source code blocks, and test logs.
+        Click <b>"🚀 Test Live Demo & Flow ➔"</b> on any project card below to instantly jump to its live interactive hardware simulator, working flow, and source code snippet on this page!
       </p>
 
       <!-- Category Filter Tabs -->
@@ -294,7 +218,7 @@
             <div class="project-icon">🧼</div>
             <h3 class="project-title">1. Washing Machine Controller Simulation</h3>
             <p class="project-desc">
-              Bare-metal C controller executing a deterministic 6-state FSM on ARM Cortex-M. Zero-blocking 10ms hardware timer ISR, PWM motor control (40%, 30%, 85%), 4x20 LCD, and software-debounced keypad scanner.
+              Bare-metal C controller executing a deterministic 6-state FSM on ARM Cortex-M. Non-blocking 10ms hardware timer ISR, PWM motor control (40%, 30%, 85%), 4x20 LCD display, and software-debounced keypad scanner.
             </p>
             <div class="project-tech">
               <span class="tech-tag">Bare-Metal C</span>
@@ -306,9 +230,14 @@
           </div>
           <div class="project-footer">
             <span class="badge blue">EMERTXE Internship</span>
-            <button class="btn btn-outline open-project-modal" data-target="projectModal1" style="font-size: 0.8rem; padding: 6px 12px;">
-              🔍 View Deep-Dive & Code
-            </button>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#deepdive-p1" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">
+                🚀 Test Live Demo & Flow ➔
+              </a>
+              <button class="btn btn-outline open-project-modal" data-target="projectModal1" style="font-size: 0.8rem; padding: 6px 12px;">
+                🔍 Popup
+              </button>
+            </div>
           </div>
         </div>
 
@@ -330,9 +259,14 @@
           </div>
           <div class="project-footer">
             <span class="badge amber">Simulink Closed-Loop</span>
-            <button class="btn btn-outline open-project-modal" data-target="projectModal2" style="font-size: 0.8rem; padding: 6px 12px;">
-              🔍 View Deep-Dive & Code
-            </button>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#deepdive-p2" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">
+                🚀 Test Live Demo & Flow ➔
+              </a>
+              <button class="btn btn-outline open-project-modal" data-target="projectModal2" style="font-size: 0.8rem; padding: 6px 12px;">
+                🔍 Popup
+              </button>
+            </div>
           </div>
         </div>
 
@@ -354,9 +288,14 @@
           </div>
           <div class="project-footer">
             <span class="badge green">ARM Hardware</span>
-            <button class="btn btn-outline open-project-modal" data-target="projectModal3" style="font-size: 0.8rem; padding: 6px 12px;">
-              🔍 View Deep-Dive & Code
-            </button>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#deepdive-p3" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">
+                🚀 Test Live Demo & Flow ➔
+              </a>
+              <button class="btn btn-outline open-project-modal" data-target="projectModal3" style="font-size: 0.8rem; padding: 6px 12px;">
+                🔍 Popup
+              </button>
+            </div>
           </div>
         </div>
 
@@ -377,37 +316,351 @@
           </div>
           <div class="project-footer">
             <span class="badge blue">Tierra Automation</span>
-            <button class="btn btn-outline open-project-modal" data-target="projectModal4" style="font-size: 0.8rem; padding: 6px 12px;">
-              🔍 View Deep-Dive & Code
-            </button>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#deepdive-p4" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">
+                🚀 Test Live Demo & Flow ➔
+              </a>
+              <button class="btn btn-outline open-project-modal" data-target="projectModal4" style="font-size: 0.8rem; padding: 6px 12px;">
+                🔍 Popup
+              </button>
+            </div>
           </div>
         </div>
 
-        <!-- Project 5: FPGA 8-Tap DSP FIR Filter -->
+        <!-- Project 5: Ibex RISC-V SoC Demo System -->
         <div class="project-card" data-category="hardware">
           <div>
             <div class="project-icon">💎</div>
-            <h3 class="project-title">5. 8-Tap FPGA Digital Signal Processing FIR Filter</h3>
+            <h3 class="project-title">5. Ibex RISC-V SoC Demo System</h3>
             <p class="project-desc">
-              Synthesized 8-tap Finite Impulse Response (FIR) low-pass filter targeting Xilinx Artix-7 FPGA using Verilog HDL. Achieved timing closure at 100MHz clock with hardware oscilloscope verification.
+              Synthesized and deployed a 32-bit RISC-V System-on-Chip based on open-source Ibex core (RV32IMC architecture) on Xilinx Artix-7 FPGA. Integrated custom memory-mapped peripherals (UART, BRAM, Timer, GPIO), compiled C firmware via riscv32-gcc, and verified execution at 50MHz.
             </p>
             <div class="project-tech">
+              <span class="tech-tag">Ibex RISC-V Core</span>
+              <span class="tech-tag">SystemVerilog</span>
               <span class="tech-tag">Xilinx Vivado</span>
-              <span class="tech-tag">Verilog HDL</span>
               <span class="tech-tag">Artix-7 FPGA</span>
-              <span class="tech-tag">100MHz Clock</span>
+              <span class="tech-tag">Bare-Metal C</span>
             </div>
           </div>
           <div class="project-footer">
-            <span class="badge amber">Vivado FPGA</span>
-            <button class="btn btn-outline open-project-modal" data-target="projectModal5" style="font-size: 0.8rem; padding: 6px 12px;">
-              🔍 View Deep-Dive & Code
-            </button>
+            <span class="badge amber">FPGA System-on-Chip</span>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#deepdive-p5" class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;">
+                🚀 Test Live Demo & Flow ➔
+              </a>
+              <button class="btn btn-outline open-project-modal" data-target="projectModal5" style="font-size: 0.8rem; padding: 6px 12px;">
+                🔍 Popup
+              </button>
+            </div>
           </div>
         </div>
 
+
+      </div><!-- end .projects-grid -->
+
+      <!-- ==========================================================================
+           FULL DEDICATED LIVE DEMO & WORKING FLOW PANELS FOR ALL 5 PROJECTS
+           ========================================================================== -->
+      
+      <!-- LIVE DEMO & FLOW 1: WASHING MACHINE CONTROLLER -->
+      <div class="project-deepdive-panel" id="deepdive-p1">
+        <div class="project-deepdive-header">
+          <div class="project-deepdive-title">
+            <span>🧼 Project 1: Washing Machine Controller Live Simulator & Flow</span>
+          </div>
+          <span class="badge blue">ARM Cortex-M · Bare-Metal C</span>
+        </div>
+        
+        <!-- Live Interactive Simulator Widget for Project 1 -->
+        <div class="sim-container" style="margin-bottom: 24px;">
+          <div class="sim-hardware-box">
+            <div class="sim-box-title">
+              <span>📟 Hardware Panel (LCD & 3x4 Matrix Keypad)</span>
+              <span class="badge green" style="font-size: 0.75rem;">10ms Scan</span>
+            </div>
+            <div class="lcd-display-case">
+              <div class="lcd-screen-inner">
+                <div class="lcd-line" id="lcdLine1_p1">READY -- PRESS START<span class="lcd-cursor"></span></div>
+                <div class="lcd-line" id="lcdLine2_p1">MODE: STANDARD [3x4]</div>
+              </div>
+            </div>
+            <div class="keypad-grid">
+              <button class="key-btn btn-start" onclick="window.simulator.handleKeyPress('START')">▶ START</button>
+              <button class="key-btn btn-stop" onclick="window.simulator.handleKeyPress('STOP')">⏹ STOP</button>
+              <button class="key-btn" onclick="window.simulator.handleKeyPress('MODE')">⚙ MODE</button>
+              <button class="key-btn" onclick="window.simulator.handleKeyPress('WASH_DIRECT')">1 WASH</button>
+              <button class="key-btn" onclick="window.simulator.handleKeyPress('RINSE_DIRECT')">2 RINSE</button>
+              <button class="key-btn" onclick="window.simulator.handleKeyPress('SPIN_DIRECT')">3 SPIN</button>
+            </div>
+          </div>
+          <div class="sim-telemetry-box">
+            <div class="sim-box-title">
+              <span>📈 Motor PWM Oscilloscope</span>
+              <span class="badge blue">TIM2 PWM</span>
+            </div>
+            <div class="scope-container">
+              <canvas id="pwmScopeCanvas_p1" class="scope-canvas" width="400" height="110"></canvas>
+            </div>
+            <div class="fsm-states-tracker" style="margin-top: 10px;">
+              <div class="fsm-state-pill active">IDLE</div>
+              <div class="fsm-state-pill">WASH (40%)</div>
+              <div class="fsm-state-pill">RINSE (30%)</div>
+              <div class="fsm-state-pill">SPIN (85%)</div>
+              <div class="fsm-state-pill">DRAIN (0%)</div>
+              <div class="fsm-state-pill">PAUSED</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size: 0.95rem; line-height: 1.7;">
+          <h4 style="color: var(--accent-blue); margin-bottom: 8px;">Working Flow & Code Architecture</h4>
+          <p style="color: var(--text-muted); margin-bottom: 16px;">
+            The control flow executes a deterministic state dispatcher loop inside <code>wash_cycle_fsm.c</code>. A periodic 10ms hardware timer interrupt decrements the remaining cycle time and drives the keypad scanner without blocking the main event loop.
+          </p>
+          <div class="code-viewer">
+            <pre class="code-body"><span class="code-kw">switch</span> (current_state) {
+    <span class="code-kw">case</span> <span class="code-var">STATE_WASH</span>:
+        <span class="code-fn">pwm_set_duty</span>(<span class="code-num">40</span>); <span class="code-cmt">/* 40% PWM agitation */</span>
+        <span class="code-fn">lcd_print_format</span>(<span class="code-str">"WASH %02d:%02d"</span>, rem_m, rem_s);
+        <span class="code-kw">if</span> (<span class="code-fn">key_pressed</span>(<span class="code-var">KEY_STOP</span>)) { <span class="code-fn">enter_paused</span>(); <span class="code-kw">break</span>; }
+        <span class="code-kw">if</span> (<span class="code-fn">timer_expired</span>())      { <span class="code-fn">transition_to</span>(<span class="code-var">STATE_RINSE</span>); }
+        <span class="code-kw">break</span>;
+}</pre>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <!-- LIVE DEMO & FLOW 2: EV BATTERY BMS -->
+      <div class="project-deepdive-panel" id="deepdive-p2">
+        <div class="project-deepdive-header">
+          <div class="project-deepdive-title">
+            <span>⚡ Project 2: EV Battery BMS Live Simulator & Flow</span>
+          </div>
+          <span class="badge amber">MATLAB / Simulink / Stateflow</span>
+        </div>
+
+        <!-- Live Interactive Simulator Widget for Project 2 -->
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; margin-bottom: 24px;">
+          <div style="font-weight: 700; margin-bottom: 16px; color: var(--accent-amber);">🔋 Live Battery Pack Telemetry & Thermal Controller Simulator</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 16px;">
+            <div>
+              <label style="font-weight: 700; font-size: 0.85rem;">Cell Temperature (°C): <span id="bmsTempVal_p2" style="color: var(--accent-amber);">35.0 °C</span></label>
+              <input type="range" id="bmsTempSlider_p2" min="20" max="75" value="35" step="0.5" style="width: 100%; margin-top: 6px;">
+            </div>
+            <div>
+              <label style="font-weight: 700; font-size: 0.85rem;">Pack Current (A): <span id="bmsCurrentVal_p2" style="color: var(--accent-blue);">20.0 A</span></label>
+              <input type="range" id="bmsCurrentSlider_p2" min="0" max="100" value="20" step="1" style="width: 100%; margin-top: 6px;">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; background: var(--code-bg); padding: 14px 18px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.88rem;">
+            <div>SOC (EKF): <b id="bmsSocVal_p2" style="color: var(--accent-emerald);">82.5 %</b> (Kalman Error: <span id="bmsEkfVal_p2">± 0.02%</span>)</div>
+            <div id="bmsRelayBadge_p2" class="badge green">✅ RELAY CLOSED: NORMAL</div>
+          </div>
+          <div style="margin-top: 10px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);" id="bmsCanFrame_p2">
+            CAN Bus Broadcast: 0x012 | SOC=82.5% | TEMP=35.0C | V_CELL=3.78V
+          </div>
+        </div>
+
+        <div style="font-size: 0.95rem; line-height: 1.7;">
+          <h4 style="color: var(--accent-amber); margin-bottom: 8px;">Stateflow Safety Matrix & EKF Flow</h4>
+          <p style="color: var(--text-muted); margin-bottom: 16px;">
+            The model computes non-linear cell OCV curves against current draw while executing multi-tier thermal threshold protection (Normal ➔ Derating at 45°C ➔ Emergency Trip at 60°C).
+          </p>
+          <div class="code-viewer">
+            <pre class="code-body"><span class="code-cmt">% Extended Kalman Filter State Estimation</span>
+<span class="code-var">x_hat</span> = A * x_prev + B * I_pack; <span class="code-cmt">% State prediction</span>
+<span class="code-var">P</span> = A * P_prev * A' + Q;          <span class="code-cmt">% Covariance prediction</span>
+<span class="code-var">K</span> = P * H' * inv(H * P * H' + R); <span class="code-cmt">% Kalman Gain</span>
+<span class="code-var">x_hat</span> = x_hat + K * (V_measured - V_ocv(SOC)); <span class="code-cmt">% State correction</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE DEMO & FLOW 3: AUTOMOTIVE TEMP CONTROLLER -->
+      <div class="project-deepdive-panel" id="deepdive-p3">
+        <div class="project-deepdive-header">
+          <div class="project-deepdive-title">
+            <span>🌡️ Project 3: Automotive Engine Temp & Fan Controller Live Simulator & Flow</span>
+          </div>
+          <span class="badge green">ARM Cortex-M · 12-bit ADC</span>
+        </div>
+
+        <!-- Live Interactive Simulator Widget for Project 3 -->
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; margin-bottom: 24px;">
+          <div style="font-weight: 700; margin-bottom: 16px; color: var(--accent-emerald);">🌡️ 12-Bit ADC Thermistor & PID Fan Speed Simulator</div>
+          <label style="font-weight: 700; font-size: 0.85rem;">Engine Coolant Temp: <span id="autoTempDisplay_p3" style="color: var(--accent-emerald);">45.0 °C</span></label>
+          <input type="range" id="autoTempSlider_p3" min="20" max="120" value="45" step="1" style="width: 100%; margin-top: 8px;">
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; text-align: center; font-family: var(--font-mono); font-size: 0.82rem;">
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div style="color: var(--text-muted);">12-BIT ADC HEX</div>
+              <div id="autoAdcDisplay_p3" style="font-weight: 700; color: var(--accent-blue);">0x600 (1535)</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div style="color: var(--text-muted);">PWM FAN SPEED</div>
+              <div id="autoPwmDisplay_p3" style="font-weight: 700; color: var(--accent-emerald);">0 % PWM</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div style="color: var(--text-muted);">HYSTERESIS BAND</div>
+              <div style="font-weight: 700;">± 5.0 °C</div>
+            </div>
+          </div>
+          <div style="margin-top: 14px; text-align: center;">
+            <span id="autoStateBadge_p3" class="badge green">❄️ NORMAL TEMP: FAN OFF</span>
+          </div>
+        </div>
+
+        <div style="font-size: 0.95rem; line-height: 1.7;">
+          <h4 style="color: var(--accent-emerald); margin-bottom: 8px;">ADC Sampling & Hysteresis Working Flow</h4>
+          <p style="color: var(--text-muted); margin-bottom: 16px;">
+            The firmware samples the analog thermistor output at 1kHz using a 12-bit ADC, filters noise with an Exponential Moving Average (EMA), and calculates PID PWM fan speed with 5°C hysteresis to prevent fan motor chatter.
+          </p>
+          <div class="code-viewer">
+            <pre class="code-body"><span class="code-kw">uint16_t</span> <span class="code-fn">read_engine_temp_adc</span>(<span class="code-kw">void</span>) {
+    ADC1->CR2 |= <span class="code-var">ADC_CR2_SWSTART</span>; <span class="code-cmt">/* Start 12-bit conversion */</span>
+    <span class="code-kw">while</span> (!(ADC1->SR & <span class="code-var">ADC_SR_EOC</span>));
+    <span class="code-kw">uint16_t</span> raw = ADC1->DR;
+    <span class="code-kw">static uint32_t</span> filtered = <span class="code-num">0</span>;
+    filtered = (filtered * <span class="code-num">7</span> + raw) / <span class="code-num">8</span>; <span class="code-cmt">/* 8-sample EMA Filter */</span>
+    <span class="code-kw">return</span> (<span class="code-kw">uint16_t</span>)filtered;
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE DEMO & FLOW 4: RAILWAY GATE AUTOMATION -->
+      <div class="project-deepdive-panel" id="deepdive-p4">
+        <div class="project-deepdive-header">
+          <div class="project-deepdive-title">
+            <span>🚂 Project 4: Smart Level Crossing Gate Live Simulator & Flow</span>
+          </div>
+          <span class="badge blue">Tierra Automation · Microcontroller</span>
+        </div>
+
+        <!-- Live Interactive Simulator Widget for Project 4 -->
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; margin-bottom: 24px;">
+          <div style="font-weight: 700; margin-bottom: 16px; color: var(--accent-blue);">🚂 Railway Track IR Sensor & Servo Gate Actuator Simulator</div>
+          <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+            <button class="btn btn-primary" id="railTriggerBtn_p4" style="flex: 1; justify-content: center;">
+              🚆 Train Approach (Trigger IR Sensor A)
+            </button>
+            <button class="btn btn-outline" id="railClearBtn_p4" style="flex: 1; justify-content: center;">
+              ✅ Train Passed (Trigger IR Sensor B)
+            </button>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; text-text-align: center; font-family: var(--font-mono); font-size: 0.82rem;">
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px; text-align: center;">
+              <div>IR SENSOR A</div>
+              <div id="railIrA_p4" style="font-weight: 700; color: var(--accent-emerald);">CLEAR (5V)</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px; text-align: center;">
+              <div>SERVO GATE ANGLE</div>
+              <div id="railServoAngle_p4" style="font-weight: 700; color: var(--accent-blue);">0° (OPEN)</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px; text-align: center;">
+              <div>IR SENSOR B</div>
+              <div id="railIrB_p4" style="font-weight: 700; color: var(--accent-emerald);">CLEAR (5V)</div>
+            </div>
+          </div>
+          <div style="margin-top: 14px; text-align: center;">
+            <span id="railStatusText_p4" class="badge green">✅ TRACK CLEAR — GATE UP — SAFE</span>
+          </div>
+        </div>
+
+        <div style="font-size: 0.95rem; line-height: 1.7;">
+          <h4 style="color: var(--accent-blue); margin-bottom: 8px;">IR Edge Interrupt & Fail-Safe Matrix Flow</h4>
+          <p style="color: var(--text-muted); margin-bottom: 16px;">
+            Edge-triggered external interrupts (EXTI0) detect oncoming trains within 50ms, rotating the PWM servo gate barrier to 90° while sounding the audible warning siren. If a sensor fails or times out (60s), the matrix defaults gates to closed for safety.
+          </p>
+          <div class="code-viewer">
+            <pre class="code-body"><span class="code-kw">void</span> <span class="code-fn">EXTI0_IRQHandler</span>(<span class="code-kw">void</span>) {
+    <span class="code-kw">if</span> (EXTI->PR & <span class="code-var">EXTI_PR_PR0</span>) {
+        EXTI->PR |= <span class="code-var">EXTI_PR_PR0</span>;   <span class="code-cmt">/* Clear pending interrupt */</span>
+        <span class="code-fn">servo_set_angle</span>(<span class="code-num">90</span>);     <span class="code-cmt">/* Lower gate barrier immediately */</span>
+        <span class="code-fn">siren_enable</span>(<span class="code-num">1</span>);            <span class="code-cmt">/* Sound warning alarm */</span>
+    }
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE DEMO & FLOW 5: IBEX RISC-V SOC DEMO SYSTEM -->
+      <div class="project-deepdive-panel" id="deepdive-p5">
+        <div class="project-deepdive-header">
+          <div class="project-deepdive-title">
+            <span>💎 Project 5: Ibex RISC-V SoC Demo System Live Telemetry & Flow</span>
+          </div>
+          <span class="badge amber">Xilinx Vivado · SystemVerilog · Bare-Metal RISC-V C</span>
+        </div>
+
+        <!-- Live Interactive Simulator Widget for Project 5 -->
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="font-weight: 700; color: var(--accent-amber);">💎 Ibex RISC-V CPU Pipeline & Memory-Mapped Bus Telemetry</div>
+            <span class="badge amber">Core: RV32IMC</span>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+            <div>
+              <label style="font-weight: 700; font-size: 0.85rem;">FPGA Clock Frequency: <span id="ibexFreqText_p5" style="color: var(--accent-emerald);">50 MHz</span></label>
+              <input type="range" id="ibexFreqSlider_p5" min="10" max="50" value="50" step="5" style="width: 100%; margin-top: 6px;">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: flex-end;">
+              <span class="badge blue" id="ibexMipsText_p5" style="font-size: 0.9rem; padding: 8px 14px;">43.5 MIPS (CPI=1.15)</span>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 14px; font-family: var(--font-mono); font-size: 0.82rem; text-align: center;">
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div style="color: var(--text-muted);">PROGRAM COUNTER (PC)</div>
+              <div id="ibexPcVal_p5" style="font-weight: 700; color: var(--accent-blue);">0x80000000</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div style="color: var(--text-muted);">FETCHED INSTRUCTION</div>
+              <div id="ibexAsmVal_p5" style="font-weight: 700; color: var(--accent-emerald);">lui sp, 0x80004</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div style="color: var(--text-muted);">CPU REGISTER STATE</div>
+              <div id="ibexRegVal_p5" style="font-weight: 700; color: var(--accent-amber);">x10/a0 = 0x40000000</div>
+            </div>
+          </div>
+
+          <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);" id="ibexUartText_p5">
+            [IBEX RISC-V SOC] | FREQ=50MHz | BAUD=115200 | RV32IMC OK
+          </div>
+        </div>
+
+        <div style="font-size: 0.95rem; line-height: 1.7;">
+          <h4 style="color: var(--accent-amber); margin-bottom: 8px;">SystemVerilog SoC Interconnect & C Firmware Flow</h4>
+          <p style="color: var(--text-muted); margin-bottom: 16px;">
+            The top-level SoC module <code>ibex_soc_top.sv</code> instantiates the open-source Ibex RV32IMC CPU core, instruction BRAM, data BRAM, memory-mapped address decoder, and UART peripheral. Bare-metal C code compiled with <code>riscv32-unknown-elf-gcc</code> handles memory-mapped I/O and timer interrupt traps.
+          </p>
+          <div class="code-viewer">
+            <div class="code-header">
+              <span class="code-title">ibex_soc_top.sv — SystemVerilog SoC Module</span>
+              <span class="badge amber">SystemVerilog</span>
+            </div>
+            <pre class="code-body"><span class="code-kw">module</span> <span class="code-fn">ibex_soc_top</span> (
+    <span class="code-kw">input</span>  <span class="code-kw">wire</span> clk_sys, rst_sys_n,
+    <span class="code-kw">output</span> <span class="code-kw">wire</span> uart_tx,
+    <span class="code-kw">input</span>  <span class="code-kw">wire</span> uart_rx
+);
+    <span class="code-cmt">// Instantiating 32-Bit Open-Source Ibex Core (RV32IMC)</span>
+    <span class="code-fn">ibex_core</span> #(
+        .<span class="code-var">PMPEnable</span>(<span class="code-num">0</span>), .<span class="code-var">RV32M</span>(ibex_pkg::<span class="code-var">RV32MFast</span>)
+    ) cpu_i (
+        .<span class="code-var">clk_i</span>(clk_sys), .<span class="code-var">rst_ni</span>(rst_sys_n),
+        .<span class="code-var">instr_req_o</span>(instr_req), .<span class="code-var">instr_addr_o</span>(instr_addr),
+        .<span class="code-var">data_req_o</span>(data_req),   .<span class="code-var">data_addr_o</span>(data_addr)
+    );
+<span class="code-kw">endmodule</span></pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div><!-- end .container -->
   </section>
 
   <!-- TESTING & HIL VERIFICATION MATRIX -->
@@ -467,12 +720,13 @@
               <td><span class="status-badge-pass">✓ PASSED</span></td>
             </tr>
             <tr>
-              <td><b>TC-FIR-01</b></td>
-              <td>FPGA 8-Tap FIR Filter 100MHz Timing Closure & Attenuation</td>
-              <td>Passband flat up to 25MHz; stopband attenuation &gt; 35dB at 40MHz</td>
-              <td>Achieved 0.8ns setup margin at 100MHz; measured attenuation = -38.4dB</td>
+              <td><b>TC-IBEX-01</b></td>
+              <td>Ibex RISC-V SoC FPGA 50MHz Timing Closure & UART Telemetry Test</td>
+              <td>CPU pipeline executes RV32IMC instructions; UART broadcasts status telemetry at 115200 baud</td>
+              <td>Met timing closure at 50MHz (+1.24ns slack); clean UART telemetry stream output</td>
               <td><span class="status-badge-pass">✓ PASSED</span></td>
             </tr>
+
           </tbody>
         </table>
       </div>
@@ -634,7 +888,7 @@
             <div class="timeline-subtitle">Tierra Automation</div>
             <div class="timeline-date">2024</div>
             <div class="timeline-desc">
-              Engineered micro-controller sensor interface modules for industrial level-crossing gate automation. Assembled prototype circuit boards, wired harness arrays, and integrated IR proximity sensors with servo PWM actuators and audible warning systems.
+              Engineered microcontroller sensor interface modules for industrial level-crossing gate automation. Assembled prototype circuit boards, wired harness arrays, and integrated IR proximity sensors with servo PWM actuators and audible warning systems.
             </div>
           </div>
         </div>
@@ -835,29 +1089,7 @@
       <div style="font-size: 0.92rem; line-height: 1.7;">
         <p><b>Overview:</b> Formulated a closed-loop Lithium-ion battery pack management algorithm in MATLAB/Simulink. Combines high-accuracy State of Charge (SOC) tracking using an Extended Kalman Filter (EKF) with Stateflow thermal safety logic and CAN bus telemetry generation.</p>
         
-        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">1. Interactive BMS Parameter Simulator</h4>
-        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 16px;">
-            <div>
-              <label style="font-weight: 700; font-size: 0.85rem;">Cell Temperature (°C): <span id="bmsTempVal" style="color: var(--accent-amber);">35.0 °C</span></label>
-              <input type="range" id="bmsTempSlider" min="20" max="75" value="35" step="0.5" style="width: 100%; margin-top: 6px;">
-            </div>
-            <div>
-              <label style="font-weight: 700; font-size: 0.85rem;">Pack Current (A): <span id="bmsCurrentVal" style="color: var(--accent-blue);">20.0 A</span></label>
-              <input type="range" id="bmsCurrentSlider" min="0" max="100" value="20" step="1" style="width: 100%; margin-top: 6px;">
-            </div>
-          </div>
-
-          <div style="display: flex; justify-content: space-between; align-items: center; background: var(--code-bg); padding: 12px 16px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.85rem;">
-            <div>SOC: <b id="bmsSocVal" style="color: var(--accent-emerald);">82.5 %</b> (EKF Error: <span id="bmsEkfVal">± 0.02%</span>)</div>
-            <div id="bmsRelayBadge" class="badge green">✅ RELAY CLOSED: NORMAL</div>
-          </div>
-          <div style="margin-top: 10px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);" id="bmsCanFrame">
-            CAN Broadcast: 0x012 | SOC=82.5% | TEMP=35.0C | V_CELL=3.78V
-          </div>
-        </div>
-
-        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">2. EKF Mathematical Formulation (MATLAB)</h4>
+        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">1. EKF Mathematical Formulation (MATLAB)</h4>
         <div class="code-viewer">
           <pre class="code-body"><span class="code-cmt">% Extended Kalman Filter State Estimation Matrix</span>
 <span class="code-var">x_hat</span> = A * x_prev + B * I_pack; <span class="code-cmt">% Predict state vector [SOC, V_rc]</span>
@@ -884,31 +1116,7 @@
       <div style="font-size: 0.92rem; line-height: 1.7;">
         <p><b>Overview:</b> Microcontroller cooling system engineered with 12-bit ADC temperature acquisition, PID closed-loop fan speed regulation, and dual hysteresis bands (5°C offset) to prevent rapid relay/fan switching noise around setpoints.</p>
 
-        <h4 style="color: var(--accent-emerald); margin: 20px 0 8px;">1. Interactive Temperature & Hysteresis Simulator</h4>
-        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
-          <label style="font-weight: 700; font-size: 0.85rem;">Engine Coolant Temp: <span id="autoTempDisplay" style="color: var(--accent-emerald);">45.0 °C</span></label>
-          <input type="range" id="autoTempSlider" min="20" max="120" value="45" step="1" style="width: 100%; margin-top: 8px;">
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; text-align: center; font-family: var(--font-mono); font-size: 0.82rem;">
-            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
-              <div style="color: var(--text-muted);">12-BIT ADC</div>
-              <div id="autoAdcDisplay" style="font-weight: 700; color: var(--accent-blue);">0x600 (1535)</div>
-            </div>
-            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
-              <div style="color: var(--text-muted);">PWM FAN SPEED</div>
-              <div id="autoPwmDisplay" style="font-weight: 700; color: var(--accent-emerald);">0 % PWM</div>
-            </div>
-            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
-              <div style="color: var(--text-muted);">HYSTERESIS BAND</div>
-              <div style="font-weight: 700;">± 5.0 °C</div>
-            </div>
-          </div>
-          <div style="margin-top: 14px; text-align: center;">
-            <span id="autoStateBadge" class="badge green">❄️ NORMAL TEMP: FAN OFF</span>
-          </div>
-        </div>
-
-        <h4 style="color: var(--accent-emerald); margin: 20px 0 8px;">2. Source Code Architecture (adc_temp_sampler.c)</h4>
+        <h4 style="color: var(--accent-emerald); margin: 20px 0 8px;">1. Source Code Architecture (adc_temp_sampler.c)</h4>
         <div class="code-viewer">
           <pre class="code-body"><span class="code-cmt">/* 12-Bit ADC Sampling with Moving Average Filter */</span>
 <span class="code-kw">uint16_t</span> <span class="code-fn">read_engine_temp_adc</span>(<span class="code-kw">void</span>) {
@@ -937,39 +1145,9 @@
         </h2>
       </div>
       <div style="font-size: 0.92rem; line-height: 1.7;">
-        <p><b>Overview:</b> Industrial safety controller built during internship at Tierra Automation. Detects approaching trains via dual IR proximity sensors, deploys servo PWM gates (0° to 90°), triggers strobe alarms, and enforces matrix fail-safe timeout logic.</p>
+        <p><b>Overview:</b> Industrial safety controller built during internship at Tierra Automation. Detects oncoming trains via dual IR proximity sensors, deploys servo PWM gates (0° to 90°), sounds strobe sirens, and enforces matrix fail-safe timeout logic.</p>
 
-        <h4 style="color: var(--accent-blue); margin: 20px 0 8px;">1. Interactive Railway Gate Field Test Simulator</h4>
-        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
-          <div style="display: flex; gap: 12px; margin-bottom: 16px;">
-            <button class="btn btn-primary" id="railTriggerBtn" style="flex: 1; justify-content: center;">
-              🚆 Train Approach (Trigger IR Sensor A)
-            </button>
-            <button class="btn btn-outline" id="railClearBtn" style="flex: 1; justify-content: center;">
-              ✅ Train Passed (Trigger IR Sensor B)
-            </button>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; text-align: center; font-family: var(--font-mono); font-size: 0.82rem;">
-            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
-              <div>IR SENSOR A</div>
-              <div id="railIrA" style="font-weight: 700; color: var(--accent-emerald);">CLEAR (5V)</div>
-            </div>
-            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
-              <div>SERVO ANGLE</div>
-              <div id="railServoAngle" style="font-weight: 700; color: var(--accent-blue);">0° (OPEN)</div>
-            </div>
-            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
-              <div>IR SENSOR B</div>
-              <div id="railIrB" style="font-weight: 700; color: var(--accent-emerald);">CLEAR (5V)</div>
-            </div>
-          </div>
-          <div style="margin-top: 14px; text-align: center;">
-            <span id="railStatusText" class="badge green">✅ TRACK CLEAR — GATE UP — SAFE</span>
-          </div>
-        </div>
-
-        <h4 style="color: var(--accent-blue); margin: 20px 0 8px;">2. Fail-Safe Gate Control Interrupt Code</h4>
+        <h4 style="color: var(--accent-blue); margin: 20px 0 8px;">1. Fail-Safe Gate Control Interrupt Code</h4>
         <div class="code-viewer">
           <pre class="code-body"><span class="code-cmt">/* IR Sensor Edge Interrupt Routine */</span>
 <span class="code-kw">void</span> <span class="code-fn">EXTI0_IRQHandler</span>(<span class="code-kw">void</span>) {
@@ -984,57 +1162,41 @@
     </div>
   </div>
 
-  <!-- PROJECT 5 MODAL: FPGA 8-Tap DSP FIR Filter -->
+  <!-- PROJECT 5 MODAL: Ibex RISC-V SoC Demo System -->
   <div class="modal-backdrop" id="projectModal5">
     <div class="modal-content">
       <button class="modal-close">✕</button>
       <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px;">
         <span class="badge amber">Project 5 Deep-Dive</span>
         <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.6rem; margin-top: 6px;">
-          8-Tap FPGA Digital Signal Processing FIR Filter (Verilog HDL)
+          Ibex RISC-V SoC Demo System (FPGA System-on-Chip & Bare-Metal C)
         </h2>
       </div>
       <div style="font-size: 0.92rem; line-height: 1.7;">
-        <p><b>Overview:</b> Designed and synthesized an 8-tap Finite Impulse Response (FIR) low-pass digital filter targeting a Xilinx Artix-7 FPGA using Verilog HDL. Achieved 100MHz clock frequency timing closure in Vivado with -38.4dB stopband attenuation.</p>
+        <p><b>Overview:</b> Synthesized and deployed a 32-bit RISC-V System-on-Chip based on the open-source Ibex core (RV32IMC architecture) on a Xilinx Artix-7 FPGA. Integrated custom memory-mapped peripherals (UART, BRAM, Timer, GPIO), compiled C firmware via <code>riscv32-unknown-elf-gcc</code>, and verified instruction execution at 50MHz.</p>
 
-        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">1. Interactive FIR Frequency Response Canvas</h4>
-        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-            <label style="font-weight: 700; font-size: 0.85rem;">Cutoff Frequency (Fc): <span id="firCutoffText" style="color: var(--accent-emerald);">25 MHz</span></label>
-            <span class="badge amber">Clock: 100 MHz</span>
-          </div>
-          <input type="range" id="firCutoffSlider" min="10" max="40" value="25" step="1" style="width: 100%; margin-bottom: 14px;">
-
-          <canvas id="firCanvas" width="500" height="130" style="width: 100%; height: 130px; background: #0D1117; border-radius: 6px; display: block;"></canvas>
-        </div>
-
-        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">2. Verilog HDL Source Code (fir_filter_8tap.v)</h4>
+        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">1. SystemVerilog Top-Level SoC Module (ibex_soc_top.sv)</h4>
         <div class="code-viewer">
-          <pre class="code-body"><span class="code-cmt">// 8-Tap Direct Form FIR Low-Pass Filter Module</span>
-<span class="code-kw">module</span> <span class="code-fn">fir_filter_8tap</span> (
-    <span class="code-kw">input</span>  <span class="code-kw">wire</span>        clk,
-    <span class="code-kw">input</span>  <span class="code-kw">wire</span>        rst_n,
-    <span class="code-kw">input</span>  <span class="code-kw">wire</span> signed [<span class="code-num">15</span>:<span class="code-num">0</span>] sample_in,
-    <span class="code-kw">output</span> <span class="code-kw">reg</span>  signed [<span class="code-num">31</span>:<span class="code-num">0</span>] filter_out
+          <pre class="code-body"><span class="code-cmt">// Ibex 32-Bit RISC-V Core Instantiation</span>
+<span class="code-kw">module</span> <span class="code-fn">ibex_soc_top</span> (
+    <span class="code-kw">input</span>  <span class="code-kw">wire</span> clk_sys, rst_sys_n,
+    <span class="code-kw">output</span> <span class="code-kw">wire</span> uart_tx,
+    <span class="code-kw">input</span>  <span class="code-kw">wire</span> uart_rx
 );
-    <span class="code-cmt">// Shift register pipeline for 8 taps</span>
-    <span class="code-kw">reg</span> signed [<span class="code-num">15</span>:<span class="code-num">0</span>] shift_reg [<span class="code-num">0</span>:<span class="code-num">7</span>];
-    <span class="code-kw">integer</span> i;
-
-    <span class="code-kw">always</span> @(<span class="code-kw">posedge</span> clk <span class="code-kw">or</span> <span class="code-kw">negedge</span> rst_n) <span class="code-kw">begin</span>
-        <span class="code-kw">if</span> (!rst_n) <span class="code-kw">begin</span>
-            <span class="code-kw">for</span> (i=<span class="code-num">0</span>; i<<span class="code-num">8</span>; i=i+<span class="code-num">1</span>) shift_reg[i] <= <span class="code-num">0</span>;
-            filter_out <= <span class="code-num">0</span>;
-        <span class="code-kw">end</span> <span class="code-kw">else</span> <span class="code-kw">begin</span>
-            shift_reg[<span class="code-num">0</span>] <= sample_in;
-            <span class="code-kw">for</span> (i=<span class="code-num">1</span>; i<<span class="code-num">8</span>; i=i+<span class="code-num">1</span>) shift_reg[i] <= shift_reg[i-<span class="code-num">1</span>];
-        <span class="code-kw">end</span>
-    <span class="code-kw">end</span>
+    <span class="code-cmt">// Instantiating 32-Bit Open-Source Ibex Core (RV32IMC)</span>
+    <span class="code-fn">ibex_core</span> #(
+        .<span class="code-var">PMPEnable</span>(<span class="code-num">0</span>), .<span class="code-var">RV32M</span>(ibex_pkg::<span class="code-var">RV32MFast</span>)
+    ) cpu_i (
+        .<span class="code-var">clk_i</span>(clk_sys), .<span class="code-var">rst_ni</span>(rst_sys_n),
+        .<span class="code-var">instr_req_o</span>(instr_req), .<span class="code-var">instr_addr_o</span>(instr_addr),
+        .<span class="code-var">data_req_o</span>(data_req),   .<span class="code-var">data_addr_o</span>(data_addr)
+    );
 <span class="code-kw">endmodule</span></pre>
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- SCRIPTS -->
   <script src="js/simulator.js"></script>
