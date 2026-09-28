@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venkata Phani Kumari Boda | Embedded Systems & Firmware Engineer Portfolio</title>
+  <meta name="description" content="Complete Portfolio of Venkata Phani Kumari Boda — Embedded Systems & Firmware Engineer. B.Tech ECE @ SRM University AP (CGPA 9.13). Comprehensive deep-dives for all projects: Bare-Metal C, ARM Cortex-M, ESP32, FSM, PWM, MATLAB/Simulink, FPGA Verilog.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <div class="brand-avatar">PK</div>
+        <div class="brand-info">
+          <div class="brand-name">Phani Kumari <span>Boda</span></div>
+          <div class="brand-title">Embedded Systems & Firmware Engineer</div>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">Overview</a></li>
+        <li><a href="#simulator">Live Simulator</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#projects">All Projects</a></li>
+        <li><a href="#testing">Verification</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Timeline</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggleBtn" title="Toggle Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+        <button class="btn btn-outline" id="openResumeBtn">
+          <span>📄</span> Resume
+        </button>
+        <a href="#projects" class="btn btn-primary">
+          <span>📂</span> Explore All 5 Projects
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="section-tag">
+          <span>●</span> B.Tech ECE @ SRM University AP · CGPA 9.13 / 10
+        </div>
+        <h1>
+          Architecting <span class="gradient-text">Predictable, High-Performance</span> Firmware & Hardware Systems
+        </h1>
+        <p class="hero-subtitle">
+          Complete engineering portfolio featuring in-depth schematics, code architecture, closed-loop models, Verilog HDL synthesis, and interactive hardware simulators for all 5 projects.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge blue">Bare-Metal Embedded C</span>
+          <span class="badge blue">ARM Cortex-M</span>
+          <span class="badge green">ESP32 & Arduino</span>
+          <span class="badge green">PWM & Timer ISR</span>
+          <span class="badge amber">MATLAB / Simulink</span>
+          <span class="badge amber">Vivado FPGA</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#simulator" class="btn btn-primary">
+            <span>🚀</span> Interactive LCD/PWM Sim
+          </a>
+          <a href="#projects" class="btn btn-outline">
+            <span>🔍</span> Full Project Deep-Dives
+          </a>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-num">9.13</span>
+            <span class="stat-label">B.Tech CGPA</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">5 Projects</span>
+            <span class="stat-label">Complete Details</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">&lt; 2 µs</span>
+            <span class="stat-label">ISR Response</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Verified Passing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Image with Telemetry -->
+      <div class="hero-visual">
+        <div class="hero-banner-wrapper">
+          <img src="assets/hero-banner.jpg" alt="Embedded Systems Engineering Laboratory Workbench" class="hero-banner-img">
+          <div class="telemetry-overlay">
+            <div class="telemetry-item">
+              <span class="status-dot"></span>
+              <span>SYSTEM: ONLINE (ARM CORTEX-M)</span>
+            </div>
+            <div class="telemetry-item" style="color: var(--accent-blue);">
+              <span>10ms ISR TICK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FIRMWARE SIMULATOR SECTION -->
+  <section class="simulator-section" id="simulator">
+    <div class="container">
+      <div class="section-tag">Featured Interactive Hardware Simulator</div>
+      <h2 class="section-title">Washing Machine Controller Simulator</h2>
+      <p class="section-desc">
+        Experience the live interactive simulation of the bare-metal C firmware. Click the 3x4 keypad buttons below to trigger matrix interrupt events, change wash modes, and view real-time PWM oscilloscope output.
+      </p>
+
+      <div class="sim-container">
+        <!-- Hardware Box: LCD + Keypad -->
+        <div class="sim-hardware-box">
+          <div class="sim-box-title">
+            <span>📟 Hardware Panel (LCD & 3x4 Matrix Keypad)</span>
+            <span class="badge green" style="font-size: 0.75rem;">10ms Scan</span>
+          </div>
+
+          <!-- LCD Screen -->
+          <div class="lcd-display-case">
+            <div class="lcd-screen-inner">
+              <div class="lcd-line" id="lcdLine1">READY -- PRESS START<span class="lcd-cursor"></span></div>
+              <div class="lcd-line" id="lcdLine2">MODE: STANDARD [3x4]</div>
+            </div>
+          </div>
+
+          <!-- Keypad -->
+          <div class="keypad-grid" id="keypadGrid">
+            <button class="key-btn btn-start" data-key="START">▶ START</button>
+            <button class="key-btn btn-stop" data-key="STOP">⏹ STOP</button>
+            <button class="key-btn" data-key="MODE">⚙ MODE</button>
+            
+            <button class="key-btn" data-key="WASH_DIRECT">1 WASH</button>
+            <button class="key-btn" data-key="RINSE_DIRECT">2 RINSE</button>
+            <button class="key-btn" data-key="SPIN_DIRECT">3 SPIN</button>
+
+            <button class="key-btn" data-key="4">4 OPTION</button>
+            <button class="key-btn" data-key="5">5 DRAIN</button>
+            <button class="key-btn" data-key="6">6 TEMP</button>
+          </div>
+        </div>
+
+        <!-- Telemetry Box: PWM Scope + FSM Tracker -->
+        <div class="sim-telemetry-box">
+          <div class="sim-box-title">
+            <span>📈 Motor PWM Oscilloscope & FSM Telemetry</span>
+            <span class="badge blue" id="pwmDutyText">0% PWM</span>
+          </div>
+
+          <!-- Oscilloscope Canvas -->
+          <div class="scope-container">
+            <div class="scope-header">
+              <span>PWM MOTOR SIGNAL OUTPUT</span>
+              <span>TIM2 10kHz PWM GENERATOR</span>
+            </div>
+            <canvas id="pwmScopeCanvas" class="scope-canvas" width="450" height="120"></canvas>
+          </div>
+
+          <!-- FSM Tracker Pills -->
+          <div class="sim-box-title" style="margin-top: 10px; font-size: 0.95rem;">
+            <span>🔄 Active State Machine Tracker</span>
+          </div>
+          <div class="fsm-states-tracker">
+            <div class="fsm-state-pill active" data-state="IDLE">IDLE</div>
+            <div class="fsm-state-pill" data-state="WASH">WASH (40%)</div>
+            <div class="fsm-state-pill" data-state="RINSE">RINSE (30%)</div>
+            <div class="fsm-state-pill" data-state="SPIN">SPIN (85%)</div>
+            <div class="fsm-state-pill" data-state="DRAIN">DRAIN (0%)</div>
+            <div class="fsm-state-pill" data-state="PAUSED">PAUSED</div>
+            <div class="fsm-state-pill" data-state="DONE">DONE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE & CODE PATTERNS SECTION -->
+  <section id="architecture">
+    <div class="container">
+      <div class="section-tag">Modular Software Engineering</div>
+      <h2 class="section-title">4-Layer Software Architecture</h2>
+      <p class="section-desc">
+        Click on any layer in the stack below to inspect the corresponding bare-metal C code pattern and learn how peripheral drivers decouple from state machine logic.
+      </p>
+
+      <div class="arch-grid">
+        <!-- Layer Stack Cards -->
+        <div class="arch-layer-stack">
+          <div class="arch-layer-card active" data-layer="app">
+            <div class="arch-layer-title">
+              <span>🖥️ Layer 4: Application Layer</span>
+              <span class="badge blue">FSM Dispatcher</span>
+            </div>
+            <div class="arch-layer-subtitle">wash_cycle_fsm.c — State machine transitions, cycle durations, user command processing</div>
+          </div>
+
+          <div class="arch-layer-card" data-layer="service">
+            <div class="arch-layer-title">
+              <span>⚙️ Layer 3: Service Layer</span>
+              <span class="badge green">Debounce & Scheduler</span>
+            </div>
+            <div class="arch-layer-subtitle">keypad_handler.c & task_scheduler.c — 20ms software debouncing and event flag updates</div>
+          </div>
+
+          <div class="arch-layer-card" data-layer="driver">
+            <div class="arch-layer-title">
+              <span>🔌 Layer 2: Peripheral Driver Layer</span>
+              <span class="badge amber">Bare-Metal Hardware</span>
+            </div>
+            <div class="arch-layer-subtitle">timer_isr.c & pwm_driver.c — Direct register operations for TIM2 hardware interrupt & PWM generation</div>
+          </div>
+
+          <div class="arch-layer-card" style="cursor: default; opacity: 0.8;">
+            <div class="arch-layer-title">
+              <span>💎 Layer 1: Physical Hardware Layer</span>
+              <span class="badge">ARM Cortex-M</span>
+            </div>
+            <div class="arch-layer-subtitle">ARM Cortex-M MCU, 4x20 Character LCD, 3x4 Matrix Keypad, H-Bridge Motor Driver</div>
+          </div>
+        </div>
+
+        <!-- Code Viewer Box -->
+        <div class="code-viewer">
+          <div class="code-header">
+            <span class="code-title" id="codeViewerTitle">wash_cycle_fsm.c — State Dispatcher Loop</span>
+            <span class="badge blue">C99 Bare-Metal</span>
+          </div>
+          <pre class="code-body" id="codeViewerBody"><span class="code-cmt">/* Application Layer: Finite State Machine Dispatcher */</span>
+<span class="code-kw">while</span> (<span class="code-num">1</span>) {
+    <span class="code-fn">keypad_scan</span>();
+    <span class="code-fn">scheduler_tick</span>();
+
+    <span class="code-kw">switch</span> (current_state) {
+        <span class="code-kw">case</span> <span class="code-var">STATE_IDLE</span>:
+            <span class="code-fn">lcd_print</span>(<span class="code-str">"READY -- PRESS START"</span>);
+            <span class="code-kw">if</span> (<span class="code-fn">key_pressed</span>(<span class="code-var">KEY_START</span>)) {
+                <span class="code-fn">timer_load</span>(<span class="code-num">480</span>); <span class="code-cmt">/* 8 min wash */</span>
+                <span class="code-fn">pwm_set_duty</span>(<span class="code-num">40</span>); <span class="code-cmt">/* 40% PWM duty */</span>
+                current_state = <span class="code-var">STATE_WASH</span>;
+            }
+            <span class="code-kw">break</span>;
+
+        <span class="code-kw">case</span> <span class="code-var">STATE_WASH</span>:
+            <span class="code-fn">lcd_print_format</span>(<span class="code-str">"WASH %02d:%02d"</span>, rem_m, rem_s);
+            <span class="code-kw">if</span> (<span class="code-fn">key_pressed</span>(<span class="code-var">KEY_STOP</span>)) { <span class="code-fn">enter_paused</span>(); <span class="code-kw">break</span>; }
+            <span class="code-kw">if</span> (<span class="code-fn">timer_expired</span>())      { <span class="code-fn">transition_to</span>(<span class="code-var">STATE_RINSE</span>); }
+            <span class="code-kw">break</span>;
+    }
+}</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLETE PROJECTS PORTFOLIO SECTION -->
+  <section id="projects" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-tag">Engineering Portfolio</div>
+      <h2 class="section-title">Complete Details For All 5 Engineering Projects</h2>
+      <p class="section-desc">
+        Click on <b>"🔍 View Full Deep-Dive & Code"</b> on any project below to open complete technical specifications, interactive simulators, circuit schematics, source code blocks, and test logs.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All 5 Projects</button>
+        <button class="filter-btn" data-filter="embedded">Embedded C & Microcontrollers</button>
+        <button class="filter-btn" data-filter="control">Control Systems & Simulink</button>
+        <button class="filter-btn" data-filter="hardware">Hardware & FPGA</button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid">
+        
+        <!-- Project 1: Washing Machine Controller -->
+        <div class="project-card featured" data-category="embedded">
+          <div>
+            <div class="project-icon">🧼</div>
+            <h3 class="project-title">1. Washing Machine Controller Simulation</h3>
+            <p class="project-desc">
+              Bare-metal C controller executing a deterministic 6-state FSM on ARM Cortex-M. Zero-blocking 10ms hardware timer ISR, PWM motor control (40%, 30%, 85%), 4x20 LCD, and software-debounced keypad scanner.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Bare-Metal C</span>
+              <span class="tech-tag">ARM Cortex-M</span>
+              <span class="tech-tag">6-State FSM</span>
+              <span class="tech-tag">10ms Timer ISR</span>
+              <span class="tech-tag">PWM Speed</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="badge blue">EMERTXE Internship</span>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal1" style="font-size: 0.8rem; padding: 6px 12px;">
+              🔍 View Deep-Dive & Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: EV Battery Management System -->
+        <div class="project-card" data-category="control">
+          <div>
+            <div class="project-icon">⚡</div>
+            <h3 class="project-title">2. EV Battery Management & Thermal Loop</h3>
+            <p class="project-desc">
+              Simulink & Stateflow model estimating battery State of Charge (SOC) via Coulomb Counting and Extended Kalman Filtering (EKF). Features multi-tier thermal threshold protection and CAN bus fault messaging.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">MATLAB</span>
+              <span class="tech-tag">Simulink</span>
+              <span class="tech-tag">Stateflow</span>
+              <span class="tech-tag">CAN Bus</span>
+              <span class="tech-tag">EKF Algorithm</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="badge amber">Simulink Closed-Loop</span>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal2" style="font-size: 0.8rem; padding: 6px 12px;">
+              🔍 View Deep-Dive & Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3: Automotive Temp & Cooling System -->
+        <div class="project-card" data-category="embedded">
+          <div>
+            <div class="project-icon">🌡️</div>
+            <h3 class="project-title">3. Automotive Engine Temp & Fan Controller</h3>
+            <p class="project-desc">
+              Closed-loop thermal management system utilizing 12-bit ADC temperature sampling, dynamic PWM fan speed regulation, and dual-band hysteresis logic to eliminate fan oscillation around setpoints.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">ARM Cortex-M</span>
+              <span class="tech-tag">12-bit ADC</span>
+              <span class="tech-tag">PWM Fan Control</span>
+              <span class="tech-tag">Hysteresis</span>
+              <span class="tech-tag">Thermal Safety</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="badge green">ARM Hardware</span>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal3" style="font-size: 0.8rem; padding: 6px 12px;">
+              🔍 View Deep-Dive & Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4: Smart Level Crossing Gate Automation -->
+        <div class="project-card" data-category="embedded hardware">
+          <div>
+            <div class="project-icon">🚂</div>
+            <h3 class="project-title">4. Smart Level Crossing Gate Automation</h3>
+            <p class="project-desc">
+              Industrial gate control system developed during internship at Tierra Automation. Uses dual IR sensors for train direction detection, servo PWM gate movement, warning sirens, and fail-safe matrix timeout logic.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Microcontroller</span>
+              <span class="tech-tag">IR Proximity Sensors</span>
+              <span class="tech-tag">Servo PWM</span>
+              <span class="tech-tag">Fail-Safe Logic</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="badge blue">Tierra Automation</span>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal4" style="font-size: 0.8rem; padding: 6px 12px;">
+              🔍 View Deep-Dive & Code
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5: FPGA 8-Tap DSP FIR Filter -->
+        <div class="project-card" data-category="hardware">
+          <div>
+            <div class="project-icon">💎</div>
+            <h3 class="project-title">5. 8-Tap FPGA Digital Signal Processing FIR Filter</h3>
+            <p class="project-desc">
+              Synthesized 8-tap Finite Impulse Response (FIR) low-pass filter targeting Xilinx Artix-7 FPGA using Verilog HDL. Achieved timing closure at 100MHz clock with hardware oscilloscope verification.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Xilinx Vivado</span>
+              <span class="tech-tag">Verilog HDL</span>
+              <span class="tech-tag">Artix-7 FPGA</span>
+              <span class="tech-tag">100MHz Clock</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <span class="badge amber">Vivado FPGA</span>
+            <button class="btn btn-outline open-project-modal" data-target="projectModal5" style="font-size: 0.8rem; padding: 6px 12px;">
+              🔍 View Deep-Dive & Code
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTING & HIL VERIFICATION MATRIX -->
+  <section id="testing">
+    <div class="container">
+      <div class="section-tag">Rigorous Quality Assurance</div>
+      <h2 class="section-title">Hardware-In-The-Loop (HIL) Test Matrix</h2>
+      <p class="section-desc">
+        Systematic verification log performed across projects, demonstrating predictable state recovery under illegal inputs, zero drift timer precision, and hardware safety.
+      </p>
+
+      <div class="table-wrapper">
+        <table class="test-table">
+          <thead>
+            <tr>
+              <th>Test Case ID</th>
+              <th>Project & Test Scenario</th>
+              <th>Expected Behavior</th>
+              <th>Measured Result</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>TC-WM-01</b></td>
+              <td>Washing Machine full cycle run (IDLE ➔ WASH ➔ RINSE ➔ SPIN ➔ DRAIN ➔ DONE)</td>
+              <td>State transitions execute on timer expiration; LCD updates within 10ms tick</td>
+              <td>Clean sequence transitions; total run time exactly matched timer load</td>
+              <td><span class="status-badge-pass">✓ PASSED</span></td>
+            </tr>
+            <tr>
+              <td><b>TC-WM-02</b></td>
+              <td>Mid-cycle STOP interrupt injected during WASH state (40% PWM active)</td>
+              <td>Motor PWM drops to 0% immediately (&lt;2ms); system transitions to PAUSED</td>
+              <td>Motor power cut in 1.4ms; remaining time stored; LCD displays PAUSED</td>
+              <td><span class="status-badge-pass">✓ PASSED</span></td>
+            </tr>
+            <tr>
+              <td><b>TC-BMS-01</b></td>
+              <td>EV Battery Thermal Runaway Simulation (Over-Temp &gt; 60°C)</td>
+              <td>Stateflow thermal protection trips safety relay; transmits CAN fault 0x07F</td>
+              <td>Relay disconnected in &lt;100µs; CAN fault frame broadcasted successfully</td>
+              <td><span class="status-badge-pass">✓ PASSED</span></td>
+            </tr>
+            <tr>
+              <td><b>TC-TEMP-01</b></td>
+              <td>Automotive Temp Rapid Transient (70°C to 110°C thermal jump)</td>
+              <td>ADC samples at 1kHz; PID ramps PWM fan speed from 30% to 100% seamlessly</td>
+              <td>Smooth PWM ramp without fan chatter or mechanical overshoot</td>
+              <td><span class="status-badge-pass">✓ PASSED</span></td>
+            </tr>
+            <tr>
+              <td><b>TC-GATE-01</b></td>
+              <td>Railway IR Sensor Timeout & Sensor Occlusion Test</td>
+              <td>System detects sensor timeout and defaults gates to closed position safely</td>
+              <td>Fail-safe matrix activated within 50ms; siren engaged; gates closed</td>
+              <td><span class="status-badge-pass">✓ PASSED</span></td>
+            </tr>
+            <tr>
+              <td><b>TC-FIR-01</b></td>
+              <td>FPGA 8-Tap FIR Filter 100MHz Timing Closure & Attenuation</td>
+              <td>Passband flat up to 25MHz; stopband attenuation &gt; 35dB at 40MHz</td>
+              <td>Achieved 0.8ns setup margin at 100MHz; measured attenuation = -38.4dB</td>
+              <td><span class="status-badge-pass">✓ PASSED</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECRUITER / HAVI.CO ALIGNMENT CALLOUT -->
+  <section style="padding: 40px 0;">
+    <div class="container">
+      <div class="recruiter-banner">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <div class="section-tag" style="background: rgba(16, 185, 129, 0.2); border-color: rgba(16, 185, 129, 0.4); color: var(--accent-emerald);">
+              🎯 Directly Transferable Competencies
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-top: 8px;">
+              Why This Architecture Powers Robotics & Interactive Toys
+            </h3>
+          </div>
+          <span class="badge green" style="font-size: 0.9rem; padding: 8px 16px;">Ready for Hardware & Firmware Roles</span>
+        </div>
+
+        <div class="recruiter-grid">
+          <div class="recruiter-card">
+            <div class="recruiter-icon">🤖</div>
+            <div class="recruiter-card-title">Robot & Toy Sequence Controllers</div>
+            <div class="recruiter-card-desc">FSM logic directly structures interactive toys (idle ➔ motion detect ➔ audio play ➔ action sequence ➔ power sleep).</div>
+          </div>
+
+          <div class="recruiter-card">
+            <div class="recruiter-icon">⚡</div>
+            <div class="recruiter-card-title">Arduino & ESP32 Mastery</div>
+            <div class="recruiter-card-desc">Programming bare-metal C on ARM Cortex-M makes high-level Arduino (millis, attachInterrupt, analogWrite) second nature.</div>
+          </div>
+
+          <div class="recruiter-card">
+            <div class="recruiter-icon">🔌</div>
+            <div class="recruiter-card-title">Hardware PCB & Circuit Design</div>
+            <div class="recruiter-card-desc">Hands-on experience in H-Bridge motor drivers, sensor interface conditioning, component selection, and soldering.</div>
+          </div>
+
+          <div class="recruiter-card">
+            <div class="recruiter-icon">🛠️</div>
+            <div class="recruiter-card-title">Fast Prototype Iteration</div>
+            <div class="recruiter-card-desc">Proven ability to transform requirements into working physical hardware + firmware within tight 4-week internship sprints.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS MATRIX SECTION -->
+  <section id="skills" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-tag">Technical Matrix</div>
+      <h2 class="section-title">Core Skills & Tooling Inventory</h2>
+      <p class="section-desc">
+        A comprehensive overview of programming languages, hardware platforms, software suites, and lab tools.
+      </p>
+
+      <div class="skills-grid">
+        <!-- Cat 1 -->
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <span>💻 Firmware & Microcontrollers</span>
+          </div>
+          <div class="skill-tags-cloud">
+            <span class="skill-pill">Bare-Metal C</span>
+            <span class="skill-pill">Embedded C</span>
+            <span class="skill-pill">ARM Cortex-M (STM32)</span>
+            <span class="skill-pill">ESP32</span>
+            <span class="skill-pill">Arduino</span>
+            <span class="skill-pill">PIC Microcontrollers</span>
+            <span class="skill-pill">8051 Assembly</span>
+            <span class="skill-pill">Raspberry Pi</span>
+            <span class="skill-pill">Timer ISR Scheduling</span>
+            <span class="skill-pill">PWM Motor Drivers</span>
+          </div>
+        </div>
+
+        <!-- Cat 2 -->
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <span>📐 Control Systems & EDA</span>
+          </div>
+          <div class="skill-tags-cloud">
+            <span class="skill-pill">MATLAB</span>
+            <span class="skill-pill">Simulink</span>
+            <span class="skill-pill">Stateflow</span>
+            <span class="skill-pill">LTspice</span>
+            <span class="skill-pill">Proteus Design</span>
+            <span class="skill-pill">Xilinx Vivado</span>
+            <span class="skill-pill">Verilog HDL</span>
+            <span class="skill-pill">MPLAB X IDE</span>
+            <span class="skill-pill">Statechart Modeling</span>
+          </div>
+        </div>
+
+        <!-- Cat 3 -->
+        <div class="skill-category">
+          <div class="skill-cat-title">
+            <span>🔌 Protocols & Lab Hardware</span>
+          </div>
+          <div class="skill-tags-cloud">
+            <span class="skill-pill">UART</span>
+            <span class="skill-pill">SPI</span>
+            <span class="skill-pill">I2C</span>
+            <span class="skill-pill">CAN Bus</span>
+            <span class="skill-pill">12-bit ADC</span>
+            <span class="skill-pill">Digital Oscilloscope</span>
+            <span class="skill-pill">Logic Analyzer</span>
+            <span class="skill-pill">Soldering & PCB Assembly</span>
+            <span class="skill-pill">HIL Stress Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION TIMELINE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-tag">Career & Education</div>
+      <h2 class="section-title">Timeline & Academic Record</h2>
+
+      <div class="timeline">
+        
+        <!-- SRM University -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-title">B.Tech in Electronics & Communication Engineering (ECE)</div>
+            <div class="timeline-subtitle">SRM University AP · Andhra Pradesh, India</div>
+            <div class="timeline-date">2023 – 2027 (Expected) · CGPA: 9.13 / 10</div>
+            <div class="timeline-desc">
+              Focused coursework in Microprocessors & Microcontrollers, Digital Signal Processing, Embedded Systems Design, Control Systems, Analog Circuit Design, and FPGA VLSI Design.
+            </div>
+          </div>
+        </div>
+
+        <!-- EMERTXE Internship -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-title">Embedded Systems Engineering Intern</div>
+            <div class="timeline-subtitle">EMERTXE IT Solutions · 4-Week Intensive Internship (2024)</div>
+            <div class="timeline-date">2024</div>
+            <div class="timeline-desc">
+              Designed and built bare-metal C firmware for a 6-State Washing Machine Controller on ARM Cortex-M. Implemented 10ms timer interrupt scheduler, PWM motor speed regulation, 4-bit parallel LCD interface, and 3x4 matrix keypad driver. Conducted Hardware-In-The-Loop (HIL) fault injection testing.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tierra Automation Internship -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-title">Electronics & Automation Engineering Intern</div>
+            <div class="timeline-subtitle">Tierra Automation</div>
+            <div class="timeline-date">2024</div>
+            <div class="timeline-desc">
+              Engineered micro-controller sensor interface modules for industrial level-crossing gate automation. Assembled prototype circuit boards, wired harness arrays, and integrated IR proximity sensors with servo PWM actuators and audible warning systems.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & RESUME SECTION -->
+  <section id="contact" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Connect & Collaborative Opportunities</h2>
+      <p class="section-desc">
+        Interested in discussing firmware architecture, electronics hardware design, or internship opportunities? Reach out directly.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-card">
+          <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 20px;">Send a Direct Message</h3>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-input" placeholder="e.g. Alex Recruiter" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="name@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" class="form-textarea" placeholder="Hello Phani Kumari, I would like to discuss a firmware opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="justify-content: center;">
+              <span>✉️</span> Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Quick Copy Cards -->
+        <div class="contact-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 20px;">Contact Information</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div class="badge copyable" data-copy="phanikumari_boda@srmap.edu.in" style="padding: 14px; font-size: 0.95rem; cursor: pointer;">
+                <span>📧</span> phanikumari_boda@srmap.edu.in
+              </div>
+
+              <div class="badge copyable" data-copy="+919390835962" style="padding: 14px; font-size: 0.95rem; cursor: pointer;">
+                <span>📱</span> +91-93908 35962
+              </div>
+
+              <a href="https://linkedin.com/in/phani-kumari" target="_blank" class="badge blue" style="padding: 14px; font-size: 0.95rem;">
+                <span>🔗</span> LinkedIn Profile
+              </a>
+
+              <a href="https://github.com/phanikumari1718-debug" target="_blank" class="badge green" style="padding: 14px; font-size: 0.95rem;">
+                <span>💻</span> GitHub: phanikumari1718-debug
+              </a>
+            </div>
+          </div>
+
+          <div style="margin-top: 32px; background: var(--bg-tertiary); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="font-weight: 700; margin-bottom: 4px;">Location</div>
+            <div style="font-size: 0.9rem; color: var(--text-muted);">Andhra Pradesh, India · Open to Relocation & Remote Work</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 1.1rem; color: var(--text-main);">
+          Venkata Phani Kumari Boda
+        </div>
+        <div>B.Tech ECE · SRM University AP (2023–2027) · CGPA 9.13 / 10</div>
+      </div>
+      <div>
+        © 2026 Venkata Phani Kumari Boda. Designed for Embedded & Firmware Excellence.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS DEEP-DIVES FOR ALL 5 PROJECTS + RESUME
+       ========================================================================== -->
+
+  <!-- RESUME MODAL -->
+  <div class="modal-backdrop" id="resumeModal">
+    <div class="modal-content">
+      <button class="modal-close">✕</button>
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 24px;">
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.5rem;">Curriculum Vitae — Phani Kumari Boda</h2>
+        <button class="btn btn-primary" onclick="window.print()"><span>🖨️</span> Print / Save PDF</button>
+      </div>
+
+      <div style="font-size: 0.92rem; line-height: 1.7; color: var(--text-main);">
+        <h3 style="color: var(--accent-blue); margin-bottom: 4px;">Venkata Phani Kumari Boda</h3>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">
+          phanikumari_boda@srmap.edu.in | +91-93908 35962 | Andhra Pradesh, India<br>
+          LinkedIn: linkedin.com/in/phani-kumari | GitHub: github.com/phanikumari1718-debug
+        </p>
+
+        <h4 style="border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin: 16px 0 8px; color: var(--accent-blue);">EDUCATION</h4>
+        <p><b>B.Tech in Electronics & Communication Engineering (ECE)</b> — SRM University AP (2023 – 2027)</p>
+        <p>Current CGPA: <b>9.13 / 10</b></p>
+
+        <h4 style="border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin: 16px 0 8px; color: var(--accent-blue);">TECHNICAL SKILLS</h4>
+        <p><b>Languages & Firmware:</b> Bare-Metal C, Embedded C, C++, Python, Verilog HDL, 8051 Assembly</p>
+        <p><b>Architectures:</b> ARM Cortex-M, ESP32, Arduino ATmega328P, PIC16/18, Raspberry Pi, Xilinx Artix-7 FPGA</p>
+        <p><b>Control & EDA Tools:</b> MATLAB, Simulink, Stateflow, LTspice, Proteus, Xilinx Vivado, MPLAB X IDE</p>
+        <p><b>Peripherals & Testing:</b> Timer ISR, PWM, 12-bit ADC, UART, SPI, I2C, CAN Bus, HIL Testing, Oscilloscope, Soldering</p>
+
+        <h4 style="border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin: 16px 0 8px; color: var(--accent-blue);">EXPERIENCE & INTERNSHIPS</h4>
+        <p><b>EMERTXE IT Solutions</b> — Embedded Systems Engineering Intern (2024)</p>
+        <ul style="margin-left: 20px; color: var(--text-muted);">
+          <li>Developed bare-metal C firmware for a 6-State FSM Washing Machine Controller on ARM Cortex-M.</li>
+          <li>Implemented 10ms hardware timer ISR, PWM speed regulation (40%, 30%, 85%), LCD parallel driver, and matrix keypad scanner.</li>
+          <li>Executed HIL fault-injection testing with zero undefined state failures.</li>
+        </ul>
+
+        <p style="margin-top: 10px;"><b>Tierra Automation</b> — Electronics & Automation Engineering Intern (2024)</p>
+        <ul style="margin-left: 20px; color: var(--text-muted);">
+          <li>Engineered microcontroller sensor interface modules for industrial level-crossing gate automation.</li>
+          <li>Integrated dual IR proximity sensors, servo PWM gate actuators, and fail-safe matrix safety logic.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 1 MODAL: Washing Machine Controller -->
+  <div class="modal-backdrop" id="projectModal1">
+    <div class="modal-content">
+      <button class="modal-close">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px;">
+        <span class="badge blue">Project 1 Deep-Dive</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.6rem; margin-top: 6px;">
+          Washing Machine Controller Simulation (ARM Cortex-M)
+        </h2>
+      </div>
+      <div style="font-size: 0.92rem; line-height: 1.7;">
+        <p><b>Overview:</b> Designed a modular, interrupt-driven C controller orchestrating a complete washing cycle using a 6-State Finite State Machine (IDLE, WASH, RINSE, SPIN, DRAIN, PAUSED, DONE). All timing is generated from a non-blocking 10ms hardware timer ISR to ensure keypad scanning and LCD updates never block motor PWM generation.</p>
+        
+        <h4 style="color: var(--accent-blue); margin: 20px 0 8px;">1. State Machine Specifications & Timing</h4>
+        <div class="table-wrapper" style="margin-bottom: 16px;">
+          <table class="test-table">
+            <thead>
+              <tr><th>State</th><th>PWM Duty</th><th>Duration</th><th>LCD Row 1 Output</th><th>Exit Condition</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>IDLE</td><td>0%</td><td>—</td><td>READY -- PRESS START</td><td>Keypress START</td></tr>
+              <tr><td>WASH</td><td>40%</td><td>480 s (8 min)</td><td>WASH &nbsp;&nbsp;08:00</td><td>Timer Expired / STOP Key</td></tr>
+              <tr><td>RINSE</td><td>30%</td><td>300 s (5 min)</td><td>RINSE &nbsp;05:00</td><td>Timer Expired / STOP Key</td></tr>
+              <tr><td>SPIN</td><td>85%</td><td>240 s (4 min)</td><td>SPIN &nbsp;&nbsp;04:00</td><td>Timer Expired / STOP Key</td></tr>
+              <tr><td>DRAIN</td><td>0%</td><td>120 s (2 min)</td><td>DRAIN &nbsp;02:00</td><td>Timer Expired / STOP Key</td></tr>
+              <tr><td>PAUSED</td><td>0%</td><td>Indefinite</td><td>PAUSED - RESUME?</td><td>START (Resume) / STOP (Cancel)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 style="color: var(--accent-blue); margin: 20px 0 8px;">2. Source Code Architecture (timer_isr.c)</h4>
+        <div class="code-viewer">
+          <pre class="code-body"><span class="code-cmt">/* Hardware Timer Interrupt Handler (10ms Periodic Tick) */</span>
+<span class="code-kw">volatile uint32_t</span> remaining_s = <span class="code-num">0</span>;
+<span class="code-kw">volatile uint8_t</span>  tick_10ms   = <span class="code-num">0</span>;
+
+<span class="code-kw">void</span> <span class="code-fn">TIM2_IRQHandler</span>(<span class="code-kw">void</span>) {
+    <span class="code-kw">if</span> (TIM2->SR & <span class="code-var">TIM_SR_UIF</span>) {
+        TIM2->SR &= ~<span class="code-var">TIM_SR_UIF</span>; <span class="code-cmt">/* Clear ISR flag */</span>
+        tick_10ms = <span class="code-num">1</span>;
+        <span class="code-kw">static uint8_t</span> sub_counter = <span class="code-num">0</span>;
+        <span class="code-kw">if</span> (++sub_counter >= <span class="code-num">100</span>) { <span class="code-cmt">/* 100 x 10ms = 1 sec */</span>
+            sub_counter = <span class="code-num">0</span>;
+            <span class="code-kw">if</span> (remaining_s > <span class="code-num">0</span>) remaining_s--;
+        }
+    }
+}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 MODAL: EV Battery Management System -->
+  <div class="modal-backdrop" id="projectModal2">
+    <div class="modal-content">
+      <button class="modal-close">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px;">
+        <span class="badge amber">Project 2 Deep-Dive</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.6rem; margin-top: 6px;">
+          EV Battery Management & Thermal Protection Loop (Simulink & Stateflow)
+        </h2>
+      </div>
+      <div style="font-size: 0.92rem; line-height: 1.7;">
+        <p><b>Overview:</b> Formulated a closed-loop Lithium-ion battery pack management algorithm in MATLAB/Simulink. Combines high-accuracy State of Charge (SOC) tracking using an Extended Kalman Filter (EKF) with Stateflow thermal safety logic and CAN bus telemetry generation.</p>
+        
+        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">1. Interactive BMS Parameter Simulator</h4>
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 16px;">
+            <div>
+              <label style="font-weight: 700; font-size: 0.85rem;">Cell Temperature (°C): <span id="bmsTempVal" style="color: var(--accent-amber);">35.0 °C</span></label>
+              <input type="range" id="bmsTempSlider" min="20" max="75" value="35" step="0.5" style="width: 100%; margin-top: 6px;">
+            </div>
+            <div>
+              <label style="font-weight: 700; font-size: 0.85rem;">Pack Current (A): <span id="bmsCurrentVal" style="color: var(--accent-blue);">20.0 A</span></label>
+              <input type="range" id="bmsCurrentSlider" min="0" max="100" value="20" step="1" style="width: 100%; margin-top: 6px;">
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; background: var(--code-bg); padding: 12px 16px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.85rem;">
+            <div>SOC: <b id="bmsSocVal" style="color: var(--accent-emerald);">82.5 %</b> (EKF Error: <span id="bmsEkfVal">± 0.02%</span>)</div>
+            <div id="bmsRelayBadge" class="badge green">✅ RELAY CLOSED: NORMAL</div>
+          </div>
+          <div style="margin-top: 10px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);" id="bmsCanFrame">
+            CAN Broadcast: 0x012 | SOC=82.5% | TEMP=35.0C | V_CELL=3.78V
+          </div>
+        </div>
+
+        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">2. EKF Mathematical Formulation (MATLAB)</h4>
+        <div class="code-viewer">
+          <pre class="code-body"><span class="code-cmt">% Extended Kalman Filter State Estimation Matrix</span>
+<span class="code-var">x_hat</span> = A * x_prev + B * I_pack; <span class="code-cmt">% Predict state vector [SOC, V_rc]</span>
+<span class="code-var">P</span> = A * P_prev * A' + Q;          <span class="code-cmt">% Covariance update</span>
+
+<span class="code-cmt">% Compute Kalman Gain</span>
+<span class="code-var">K</span> = P * H' * inv(H * P * H' + R);
+<span class="code-var">x_hat</span> = x_hat + K * (V_measured - V_ocv(SOC)); <span class="code-cmt">% Correct state estimate</span></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 3 MODAL: Automotive Temp Controller -->
+  <div class="modal-backdrop" id="projectModal3">
+    <div class="modal-content">
+      <button class="modal-close">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px;">
+        <span class="badge green">Project 3 Deep-Dive</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.6rem; margin-top: 6px;">
+          Automotive Engine Temp & Intelligent Fan Controller (ARM Cortex-M)
+        </h2>
+      </div>
+      <div style="font-size: 0.92rem; line-height: 1.7;">
+        <p><b>Overview:</b> Microcontroller cooling system engineered with 12-bit ADC temperature acquisition, PID closed-loop fan speed regulation, and dual hysteresis bands (5°C offset) to prevent rapid relay/fan switching noise around setpoints.</p>
+
+        <h4 style="color: var(--accent-emerald); margin: 20px 0 8px;">1. Interactive Temperature & Hysteresis Simulator</h4>
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
+          <label style="font-weight: 700; font-size: 0.85rem;">Engine Coolant Temp: <span id="autoTempDisplay" style="color: var(--accent-emerald);">45.0 °C</span></label>
+          <input type="range" id="autoTempSlider" min="20" max="120" value="45" step="1" style="width: 100%; margin-top: 8px;">
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; text-align: center; font-family: var(--font-mono); font-size: 0.82rem;">
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div style="color: var(--text-muted);">12-BIT ADC</div>
+              <div id="autoAdcDisplay" style="font-weight: 700; color: var(--accent-blue);">0x600 (1535)</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div style="color: var(--text-muted);">PWM FAN SPEED</div>
+              <div id="autoPwmDisplay" style="font-weight: 700; color: var(--accent-emerald);">0 % PWM</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div style="color: var(--text-muted);">HYSTERESIS BAND</div>
+              <div style="font-weight: 700;">± 5.0 °C</div>
+            </div>
+          </div>
+          <div style="margin-top: 14px; text-align: center;">
+            <span id="autoStateBadge" class="badge green">❄️ NORMAL TEMP: FAN OFF</span>
+          </div>
+        </div>
+
+        <h4 style="color: var(--accent-emerald); margin: 20px 0 8px;">2. Source Code Architecture (adc_temp_sampler.c)</h4>
+        <div class="code-viewer">
+          <pre class="code-body"><span class="code-cmt">/* 12-Bit ADC Sampling with Moving Average Filter */</span>
+<span class="code-kw">uint16_t</span> <span class="code-fn">read_engine_temp_adc</span>(<span class="code-kw">void</span>) {
+    ADC1->CR2 |= <span class="code-var">ADC_CR2_SWSTART</span>; <span class="code-cmt">/* Trigger ADC conversion */</span>
+    <span class="code-kw">while</span> (!(ADC1->SR & <span class="code-var">ADC_SR_EOC</span>)); <span class="code-cmt">/* Wait conversion */</span>
+    <span class="code-kw">uint16_t</span> raw_adc = ADC1->DR;
+    
+    <span class="code-cmt">/* 8-sample Exponential Moving Average */</span>
+    <span class="code-kw">static uint32_t</span> filtered = <span class="code-num">0</span>;
+    filtered = (filtered * <span class="code-num">7</span> + raw_adc) / <span class="code-num">8</span>;
+    <span class="code-kw">return</span> (<span class="code-kw">uint16_t</span>)filtered;
+}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 4 MODAL: Smart Railway Gate Automation -->
+  <div class="modal-backdrop" id="projectModal4">
+    <div class="modal-content">
+      <button class="modal-close">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px;">
+        <span class="badge blue">Project 4 Deep-Dive</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.6rem; margin-top: 6px;">
+          Smart Level Crossing Gate Automation (Tierra Automation Internship)
+        </h2>
+      </div>
+      <div style="font-size: 0.92rem; line-height: 1.7;">
+        <p><b>Overview:</b> Industrial safety controller built during internship at Tierra Automation. Detects approaching trains via dual IR proximity sensors, deploys servo PWM gates (0° to 90°), triggers strobe alarms, and enforces matrix fail-safe timeout logic.</p>
+
+        <h4 style="color: var(--accent-blue); margin: 20px 0 8px;">1. Interactive Railway Gate Field Test Simulator</h4>
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
+          <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+            <button class="btn btn-primary" id="railTriggerBtn" style="flex: 1; justify-content: center;">
+              🚆 Train Approach (Trigger IR Sensor A)
+            </button>
+            <button class="btn btn-outline" id="railClearBtn" style="flex: 1; justify-content: center;">
+              ✅ Train Passed (Trigger IR Sensor B)
+            </button>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; text-align: center; font-family: var(--font-mono); font-size: 0.82rem;">
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div>IR SENSOR A</div>
+              <div id="railIrA" style="font-weight: 700; color: var(--accent-emerald);">CLEAR (5V)</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div>SERVO ANGLE</div>
+              <div id="railServoAngle" style="font-weight: 700; color: var(--accent-blue);">0° (OPEN)</div>
+            </div>
+            <div style="background: var(--bg-card); padding: 10px; border-radius: 6px;">
+              <div>IR SENSOR B</div>
+              <div id="railIrB" style="font-weight: 700; color: var(--accent-emerald);">CLEAR (5V)</div>
+            </div>
+          </div>
+          <div style="margin-top: 14px; text-align: center;">
+            <span id="railStatusText" class="badge green">✅ TRACK CLEAR — GATE UP — SAFE</span>
+          </div>
+        </div>
+
+        <h4 style="color: var(--accent-blue); margin: 20px 0 8px;">2. Fail-Safe Gate Control Interrupt Code</h4>
+        <div class="code-viewer">
+          <pre class="code-body"><span class="code-cmt">/* IR Sensor Edge Interrupt Routine */</span>
+<span class="code-kw">void</span> <span class="code-fn">EXTI0_IRQHandler</span>(<span class="code-kw">void</span>) {
+    <span class="code-kw">if</span> (EXTI->PR & <span class="code-var">EXTI_PR_PR0</span>) {
+        EXTI->PR |= <span class="code-var">EXTI_PR_PR0</span>; <span class="code-cmt">/* Clear pending interrupt */</span>
+        <span class="code-fn">servo_set_angle</span>(<span class="code-num">90</span>);   <span class="code-cmt">/* Lower gate barrier immediately */</span>
+        <span class="code-fn">siren_enable</span>(<span class="code-num">1</span>);          <span class="code-cmt">/* Sound warning alarm */</span>
+    }
+}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 5 MODAL: FPGA 8-Tap DSP FIR Filter -->
+  <div class="modal-backdrop" id="projectModal5">
+    <div class="modal-content">
+      <button class="modal-close">✕</button>
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px;">
+        <span class="badge amber">Project 5 Deep-Dive</span>
+        <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: 1.6rem; margin-top: 6px;">
+          8-Tap FPGA Digital Signal Processing FIR Filter (Verilog HDL)
+        </h2>
+      </div>
+      <div style="font-size: 0.92rem; line-height: 1.7;">
+        <p><b>Overview:</b> Designed and synthesized an 8-tap Finite Impulse Response (FIR) low-pass digital filter targeting a Xilinx Artix-7 FPGA using Verilog HDL. Achieved 100MHz clock frequency timing closure in Vivado with -38.4dB stopband attenuation.</p>
+
+        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">1. Interactive FIR Frequency Response Canvas</h4>
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <label style="font-weight: 700; font-size: 0.85rem;">Cutoff Frequency (Fc): <span id="firCutoffText" style="color: var(--accent-emerald);">25 MHz</span></label>
+            <span class="badge amber">Clock: 100 MHz</span>
+          </div>
+          <input type="range" id="firCutoffSlider" min="10" max="40" value="25" step="1" style="width: 100%; margin-bottom: 14px;">
+
+          <canvas id="firCanvas" width="500" height="130" style="width: 100%; height: 130px; background: #0D1117; border-radius: 6px; display: block;"></canvas>
+        </div>
+
+        <h4 style="color: var(--accent-amber); margin: 20px 0 8px;">2. Verilog HDL Source Code (fir_filter_8tap.v)</h4>
+        <div class="code-viewer">
+          <pre class="code-body"><span class="code-cmt">// 8-Tap Direct Form FIR Low-Pass Filter Module</span>
+<span class="code-kw">module</span> <span class="code-fn">fir_filter_8tap</span> (
+    <span class="code-kw">input</span>  <span class="code-kw">wire</span>        clk,
+    <span class="code-kw">input</span>  <span class="code-kw">wire</span>        rst_n,
+    <span class="code-kw">input</span>  <span class="code-kw">wire</span> signed [<span class="code-num">15</span>:<span class="code-num">0</span>] sample_in,
+    <span class="code-kw">output</span> <span class="code-kw">reg</span>  signed [<span class="code-num">31</span>:<span class="code-num">0</span>] filter_out
+);
+    <span class="code-cmt">// Shift register pipeline for 8 taps</span>
+    <span class="code-kw">reg</span> signed [<span class="code-num">15</span>:<span class="code-num">0</span>] shift_reg [<span class="code-num">0</span>:<span class="code-num">7</span>];
+    <span class="code-kw">integer</span> i;
+
+    <span class="code-kw">always</span> @(<span class="code-kw">posedge</span> clk <span class="code-kw">or</span> <span class="code-kw">negedge</span> rst_n) <span class="code-kw">begin</span>
+        <span class="code-kw">if</span> (!rst_n) <span class="code-kw">begin</span>
+            <span class="code-kw">for</span> (i=<span class="code-num">0</span>; i<<span class="code-num">8</span>; i=i+<span class="code-num">1</span>) shift_reg[i] <= <span class="code-num">0</span>;
+            filter_out <= <span class="code-num">0</span>;
+        <span class="code-kw">end</span> <span class="code-kw">else</span> <span class="code-kw">begin</span>
+            shift_reg[<span class="code-num">0</span>] <= sample_in;
+            <span class="code-kw">for</span> (i=<span class="code-num">1</span>; i<<span class="code-num">8</span>; i=i+<span class="code-num">1</span>) shift_reg[i] <= shift_reg[i-<span class="code-num">1</span>];
+        <span class="code-kw">end</span>
+    <span class="code-kw">end</span>
+<span class="code-kw">endmodule</span></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/simulator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
